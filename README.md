@@ -52,3 +52,34 @@ Requirements
   - When a bid is placed, the old highest bidder (if one exists) should receive an email notifying them that they were outbid
   - List neighborhood data with a location from Zillow or Trulia.com
   - Add visual graph of bid history also showing Zestimate.
+
+- bourbon documentation
+  - [bourbon documentation](http://bourbon.io/docs/)
+    - Bourbon gives you access to "default styles".  For example, it has some shortcuts key words for buttons, text decoration, animations, etc
+  - [bourbon neat documentation](http://thoughtbot.github.io/neat-docs/latest/)
+    - Control # of columns something should span (http://thoughtbot.github.io/neat-docs/latest/#span-columns).
+      - Ex:  
+      .element {
+        @include span-columns(6);
+
+     .nested-element {
+       @include span-columns(2 of 6);
+       }
+     }
+     - outer-container: similar to "container" in bootstrap:
+      - Ex:
+      .element {
+        @include outer-container(960px);
+        }
+
+        ** this sets container width to 960px.
+        *** .element is would be equal to the ID or class set for that html item (ie. <div class='element'></div>, etc)
+
+    - shift: similar to "offset" in bootstrap. Shifts an element horizontally by the number of columns specified
+      - Ex:
+      .element {
+        @include shift(3);
+        }
+
+    - Other resource links:
+      - [Treehouse on Bourbon](http://blog.teamtreehouse.com/introduction-neat-semantic-sass-grid)

@@ -24,7 +24,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bourbon'
-
 gem 'neat', '~> 1.7', '>= 1.7.2'
 
 # Use ActiveModel has_secure_password
