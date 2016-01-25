@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
 
   def sign_out
     session.delete(:user_id)
-    session.delete(:id)
     redirect_to "/"
   end
 
