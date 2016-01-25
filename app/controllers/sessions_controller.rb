@@ -7,13 +7,13 @@ class SessionsController < ApplicationController
 
   def sign_in
     @user = User.find_by(email: params[:email])
-      if @user
-        @user.authenticate(params[:password])
-        session[:user_id] = @user.id
-        redirect_to "/", notice: "You have been signed in"
-      else
-        redirect_to "/", notice: "Wrong username/password. Try again."
-      end
+    if @user
+      @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect_to "/", notice: "You have been signed in"
+    else
+      redirect_to "/", notice: "Wrong username/password. Try again."
+    end
   end
 
 
