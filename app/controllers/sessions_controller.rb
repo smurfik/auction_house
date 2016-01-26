@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def sign_out
     session.delete(:user_id)
-    redirect_to "/"
+    redirect_to "/", notice: "You have been signed out"
   end
 
   def sign_in

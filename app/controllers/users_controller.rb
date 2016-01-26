@@ -16,6 +16,9 @@ class UsersController < ApplicationController
     @current_user = User.find(session[:user_id])
   end
 
+  def sign_in
+  end
+
 
 
   private
