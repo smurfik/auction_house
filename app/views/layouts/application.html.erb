@@ -8,6 +8,13 @@
 </head>
 <body>
 
+
+<% if flash.key?(:notice) %>
+  <div class = 'alert alert-info'>
+    <%= flash[:notice] %>
+  </div>
+<% end %>  
+
 <%= yield %>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTc8wb5zAQilJ4EhAYSndwdxbrwzGr8eY" type="text/javascript"></script>
