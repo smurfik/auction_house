@@ -1,5 +1,30 @@
 #map {
-  width: 100vw;
-  height: 100vh;
+  @include span-columns(8);
+  // width: 100vw;
+  min-height: 600px;
+  max-height: 1100px;
   margin: 0;
+}
+
+.sidebar {
+  @include span-columns(4);
+  padding-left: 2.35765%;
+}
+
+.sidebar .address-row {
+  @include span-columns(12);
+}
+
+.sidebar .address-row .address {
+  @include span-columns(8);
+}
+
+.sidebar .address-row .bid-now-button{
+}
+
+.sidebar .address-row .buy-now-button {
+}
+
+.home-picture {
+  margin: 10px auto;
 }
