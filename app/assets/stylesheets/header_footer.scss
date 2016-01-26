@@ -1,0 +1,53 @@
+// * { outline: 1px pink solid }
+
+body {
+  margin: 0px;
+}
+
+#header {
+  @include span-columns(12);
+  width: 100%;
+}
+
+.logo {
+  @include span-columns(1);
+}
+
+.nav {
+  @include span-columns(11);
+  height: 30px;
+}
+
+.nav .left {
+  @include span-columns(1);
+  display: inline;
+}
+
+.nav .right {
+  @include span-columns(1);
+  display: inline;
+  float: right;
+}
+
+#header .search {
+  @include span-columns(11);
+  height: 30px;
+}
+
+#footer {
+  background: #b9c5db;
+  width: 100%;
+  height: 100px;
+  clear: both;
+  bottom: 0;
+  left: 0;
+}
+
+#footer img {
+  vertical-align: middle;
+}
+
+#footer .center {
+  text-align: center;
+  padding-top: 40px;
+}
