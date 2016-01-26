@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   get "/user-sign-in", to: "users#sign_in"
   post "/sign-in", to: "sessions#sign_in", as: :sign_in
 
+  get "/house", to: "houses#show"
+
+
 end
