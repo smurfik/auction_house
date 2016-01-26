@@ -3,9 +3,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    session[:user_id] = @user.id
-    redirect_to "/"
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to "/"
+    else
+      redirect_to "/new-user", notice: "Username or email not complete, or passwords do not match. You tell me!"
+    end
   end
 
 
