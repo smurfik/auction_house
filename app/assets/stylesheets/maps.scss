@@ -31,6 +31,7 @@
   margin: 10px auto;
 }
 
+<<<<<<< HEAD
 .controls {
   margin-top: 10px;
   border: 1px solid transparent;
@@ -55,4 +56,18 @@
 
 #pac-input:focus {
   border-color: #4d90fe;
+
+// ************** House View *****************
+
+.house ul {
+  list-style: none;
+}
+
+.data {
+  display: inline-block;
+}
+
+.image {
+  display: inline-block;
+  float: right;
 }
