@@ -1,13 +1,22 @@
+var currentLocation;
+var map;
+
+navigator.geolocation.getCurrentPosition(function(position){
+  var lat = position.coords.latitude;
+  var lng = position.coords.longitude;
+  map.setCenter({lat: lat, lng: lng});
+  });
+
 function initialize() {
 
   var markers = [];
-  var map = new google.maps.Map(document.getElementById('map-canvas'), {
+    map = new google.maps.Map(document.getElementById('map-canvas'), {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
   var defaultBounds = new google.maps.LatLngBounds(
-      new google.maps.LatLng(-33.8902, 151.1759),
-      new google.maps.LatLng(-33.8474, 151.2631));
+      new google.maps.LatLng(47.5635, -122.4224),
+      new google.maps.LatLng(47.7074, -122.2631));
   map.fitBounds(defaultBounds);
 
   // Create the search box and link it to the UI element.
@@ -22,7 +31,7 @@ function initialize() {
   google.maps.event.addListener(searchBox, 'places_changed', function() {
     var places = searchBox.getPlaces();
 
-    if (places.length == 0) {
+    if (places.length === 0) {
       return;
     } for (var i = 0, marker; marker = markers[i]; i++) {
       marker.setMap(null);
