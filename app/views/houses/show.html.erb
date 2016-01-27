@@ -1,0 +1,34 @@
+
+<% z = Zillow.find %>
+<div class= "house">
+  <div class="data">
+    <ul>
+      <li>Street: <%= z.address['street'] %></li>
+      <li>City: <%= z.address['city']%></li>
+      <li>State: <%= z.address['state']%></li>
+      <li>Zipcode: <%= z.address['zipcode']%></li>
+      <li>Zestimate: <%= z.zestimate.to_i %></li>
+      <li>Latitude: <%= z.address['latitude']%></li>
+      <li>Longitude: <%= z.address['longitude']%></li>
+      <li>Bedrooms: <%= z.edited_facts['bedrooms']%></li>
+      <li>Bathrooms: <%= z.edited_facts['bathrooms']%></li>
+      <li>Year Built: <%= z.edited_facts['yearBuilt']%></li>
+      <li>Year Updated: <%= z.edited_facts['yearUpdated']%></li>
+      <li>Lot Size: <%= z.edited_facts['lotSizeSqFt']%></li>
+      <li>Finished Square Feet: <%= z.edited_facts['finishedSqFt']%></li>
+      <li>Basement: <%= z.edited_facts['basement']%></li>
+      <li>Floors: <%= z.edited_facts['numFloors']%></li>
+      <li>Roof: <%= z.edited_facts['roof']%></li>
+      <li>View: <%= z.edited_facts['view']%></li>
+      <li>Rooms: <%= z.edited_facts['rooms']%></li>
+      <li>Heating System: <%= z.edited_facts['heatingSystem']%></li>
+      <li>Heating System: <%= z.edited_facts['heatingSources']%></li>
+      <li>Parking: <%= z.edited_facts['parkingType']%></li>
+    </ul>
+  </div>
+
+  <div class ="image">
+    <%= image_tag ("#{z.images['image']["url"]}") %>
+  </div>
+
+</div>
