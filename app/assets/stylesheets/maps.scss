@@ -1,8 +1,7 @@
 #map-canvas {
   @include span-columns(8);
   // width: 100vw;
-  min-height: 600px;
-  max-height: 1100px;
+  height: calc(100vh - 165px);
   margin: 0;
   padding: 0;
   // z-index: 0;
@@ -11,24 +10,25 @@
 .sidebar {
   @include span-columns(4);
   padding-left: 2.35765%;
+  margin-top: 0;
+  height: calc(100vh - 165px);
+  overflow: scroll;
 }
 
 .sidebar .address-row {
   @include span-columns(12);
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 .sidebar .address-row .address {
   @include span-columns(8);
 }
 
-.sidebar .address-row .bid-now-button{
-}
 
-.sidebar .address-row .buy-now-button {
-}
 
 .home-picture {
-  margin: 10px auto;
+  margin-bottom: 10px;
 }
 
 .controls {
@@ -56,6 +56,159 @@
 #pac-input:focus {
   border-color: #4d90fe;
 }
+
+.address h2 {
+  margin: 0;
+}
+.address h3 {
+  margin: 0;
+}
+
+.address h4 {
+  margin: 0;
+}
+
+.property-details {
+  height: 200px;
+  width: 100%;
+  margin: 0;
+}
+
+.property-details ul {
+  padding-left: 0;
+}
+
+
+.sale {
+  margin-top: 15px;
+  display: inline-block;
+  float: left;
+}
+
+.sale h2 {
+  margin: 0;
+  color: #2782df;
+}
+
+.sale h3 {
+  margin: 0;
+}
+
+.sale h4 {
+  margin: 0;
+}
+
+.facts {
+  display: inline-block;
+  float: right;
+}
+
+.facts h4 {
+  margin: 0;
+}
+
+.facts2 {
+  display: inline-block;
+  float: left;
+
+}
+.house-details li {
+  font-size: 18px;
+}
+
+
+.bid-now-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+	box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #9dce2c), color-stop(1, #8cb82b) );
+	background:-moz-linear-gradient( center top, #9dce2c 5%, #8cb82b 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dce2c', endColorstr='#8cb82b');
+	background-color:#9dce2c;
+	-webkit-border-top-left-radius:26px;
+	-moz-border-radius-topleft:26px;
+	border-top-left-radius:26px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:26px;
+	-moz-border-radius-bottomright:26px;
+	border-bottom-right-radius:26px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0px;
+	border:2px solid #83c41a;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	font-style:normal;
+	height:50px;
+	line-height:50px;
+	width:90px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #689324;
+}
+.bid-now-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8cb82b), color-stop(1, #9dce2c) );
+	background:-moz-linear-gradient( center top, #8cb82b 5%, #9dce2c 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8cb82b', endColorstr='#9dce2c');
+	background-color:#8cb82b;
+}
+.bid-now-button:active {
+	position:relative;
+	top:1px;
+}
+
+
+.buy-now-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #cae3fc;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #cae3fc;
+	box-shadow:inset 0px 1px 0px 0px #cae3fc;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #4197ee) );
+	background:-moz-linear-gradient( center top, #79bbff 5%, #4197ee 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#4197ee');
+	background-color:#79bbff;
+	-webkit-border-top-left-radius:0;
+	-moz-border-radius-topleft:0;
+	border-top-left-radius:0;
+	-webkit-border-top-right-radius:26px;
+	-moz-border-radius-topright:26px;
+	border-top-right-radius:26px;
+	-webkit-border-bottom-right-radius:0;
+	-moz-border-radius-bottomright:0;
+	border-bottom-right-radius:0;
+	-webkit-border-bottom-left-radius:26px;
+	-moz-border-radius-bottomleft:26px;
+	border-bottom-left-radius:26px;
+	text-indent:0px;
+	border:2px solid #469df5;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	font-style:normal;
+	height:50px;
+	line-height:50px;
+	width:90px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #287ace;
+}
+.buy-now-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff) );
+	background:-moz-linear-gradient( center top, #4197ee 5%, #79bbff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4197ee', endColorstr='#79bbff');
+	background-color:#4197ee;
+}.buy-now-button:active {
+	position:relative;
+	top:1px;
+}
+
 
 // ************** House View *****************
 
