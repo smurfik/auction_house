@@ -7,7 +7,7 @@ class HousesController < ApplicationController
   end
 
   def walkscore
-    @walkscore = Walkscore.find("10350 Mary Ave NW, Seattle, WA 98177", 47.704885, -122.375040)
+    @walkscore = Walkscore.find(params["address"], params["lat"], params["lng"])
     render json: @walkscore
   end
 
