@@ -29,6 +29,11 @@ function initialize() {
   // Listen for the event fired when the user selects an item from the
   // pick list. Retrieve the matching places for that item.
   google.maps.event.addListener(searchBox, 'places_changed', function() {
+
+    $.get( "/house", function( data ) {
+      $(".property-details").html( data );
+    });
+
     var places = searchBox.getPlaces();
 
     if (places.length === 0) {
@@ -62,8 +67,13 @@ function initialize() {
       bounds.extend(place.geometry.location);
     }
 
+
     map.fitBounds(bounds);
   });
+
+
+
+
 }
 
 // google.maps.event.addDomListener(window, 'load', initialize);
