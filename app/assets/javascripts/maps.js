@@ -23,12 +23,18 @@ function initialize() {
   var input = document.getElementById('pac-input');
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-  var searchBox = new google.maps.places.SearchBox((input));
+  var searchBox = new google.maps.places.SearchBox(input, {
+    bounds: defaultBounds});
 
   // [START region_getplaces]
   // Listen for the event fired when the user selects an item from the
   // pick list. Retrieve the matching places for that item.
   google.maps.event.addListener(searchBox, 'places_changed', function() {
+
+    $.get( "/house", function( data ) {
+      $(".property-details").html( data );
+    });
+
     var places = searchBox.getPlaces();
 
     if (places.length === 0) {
@@ -62,8 +68,13 @@ function initialize() {
       bounds.extend(place.geometry.location);
     }
 
+
     map.fitBounds(bounds);
   });
+
+
+
+
 }
 
 // google.maps.event.addDomListener(window, 'load', initialize);
