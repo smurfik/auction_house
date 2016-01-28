@@ -19,6 +19,8 @@
   @include span-columns(12);
   margin-bottom: 10px;
   width: 100%;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
 }
 
 .sidebar .address-row .address {
@@ -69,9 +71,10 @@
 }
 
 .property-details {
-  height: 200px;
   width: 100%;
-  margin: 0;
+  @include clearfix;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
 }
 
 .property-details ul {
@@ -81,8 +84,7 @@
 
 .sale {
   margin-top: 15px;
-  display: inline-block;
-  float: left;
+  @include span-columns(6);
 }
 
 .sale h2 {
@@ -99,8 +101,8 @@
 }
 
 .facts {
-  display: inline-block;
-  float: right;
+  @include span-columns(6);
+  @include omega;
 }
 
 .facts h4 {
