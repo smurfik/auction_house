@@ -19,7 +19,7 @@ class Zillow
   end
 
 
-  def self.find
+  def self.find(address)
     response = HTTParty.get("http://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz19vnw1f09vv_82rpe&address=4318-4th-Ave-NE&citystatezip=SeattleWA98105")
     z = self.new response.parsed_response
     z.images =  HTTParty.get("http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=X1-ZWz19vnw1f09vv_82rpe&zpid=#{z.zpid}")["updatedPropertyDetails"]["response"]["images"]["image"]["url"]
