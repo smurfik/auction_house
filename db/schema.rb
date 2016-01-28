@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20160127213312) do
     t.integer  "zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "bids_count", default: 0
+    t.integer  "bids_count"
   end
 
   create_table "users", force: :cascade do |t|
