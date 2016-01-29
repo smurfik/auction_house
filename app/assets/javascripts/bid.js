@@ -6,7 +6,7 @@ $(document).ready(function() {
     $('.bid-form').addClass("styled");
     $('.bid-now-button').addClass("styled-bid-button");
 
-    $(this).unbind("click");
+    $(this).unbind();
     $('.bid-now-button').click(function() {
     });
   });
