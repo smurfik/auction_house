@@ -1,4 +1,3 @@
-var currentLocation;
 var map;
 
 navigator.geolocation.getCurrentPosition(function(position){
@@ -10,7 +9,7 @@ navigator.geolocation.getCurrentPosition(function(position){
 function initialize() {
 
   var markers = [];
-    map = new google.maps.Map(document.getElementById('map-canvas'), {
+  map = new google.maps.Map(document.getElementById('map-canvas'), {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
@@ -68,49 +67,16 @@ function initialize() {
       bounds.extend(place.geometry.location);
     }
 
-
     map.fitBounds(bounds);
+
+    $.get("/walkscore", {
+      address: input.value,
+      lat: map.getCenter().lat(),
+      lng: map.getCenter().lng()
+    }, function(data) {
+      $("#walk").html(data.walkscore);
+    });
+
   });
 
-
-
-
 }
-
-// google.maps.event.addDomListener(window, 'load', initialize);
-
-
-// var map;
-// $(function() {
-//
-//   if (navigator === undefined) {
-//     initializeMap(-34.1, 150.6);
-//   } else {
-//
-//   navigator.geolocation.getCurrentPosition(function(position){
-//     var lat = position.coords.latitude;
-//     var lng = position.coords.longitude;
-//     initializeMap(lat,lng);
-//     });
-//   }
-//
-//   var initializeMap = (function(lat,lng) {
-//     var mapDiv = $("#map")[0];
-//     var map = new google.maps.Map(mapDiv, {
-//       center: {lat: lat, lng: lng},
-//       zoom: 13
-//       });
-//   });
-//
-//   var geocoder = new google.maps.Geocoder();
-//
-//   $("#submit").click(function(){
-//
-//   var address = $("#address").val();
-//     geocoder.geocode({'address': address }, function(results) {
-//       var lat = results[0].geometry.location.lat();
-//       var lng = results[0].geometry.location.lng();
-//       map.setCenter({lat: lat, lng: lng});
-//     });
-//   });
-// });
