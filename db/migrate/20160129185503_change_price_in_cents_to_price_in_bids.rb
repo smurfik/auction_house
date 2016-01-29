@@ -1,6 +1,5 @@
 class ChangePriceInCentsToPriceInBids < ActiveRecord::Migration
   def change
-    remove_column :bids, :price_in_cents, :integer
-    add_column :bids, :price, :integer
+    rename_column :bids, :price_in_cents, :price
   end
 end
