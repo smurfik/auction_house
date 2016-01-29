@@ -16,10 +16,10 @@
       <h3>Seattle, WA 98103</h3>
       <h4>2 beds 1 bath 1,770 sqft</h4>
     </div>
-    <%= form_tag "#", method: "POST" do %>
-      <%# <%= text_field_tag :price_in_cents, nil, placeholder: "enter your price" %1> %>
-      <%= submit_tag "Bid Now!", class: "bid-now-button" %>
-    <% end %>
+    <%# <%= form_tag create_bid_path(@current_user.id, :house_id), method: "POST" do %1> %>
+    <%#   <%= text_field_tag :price, nil, placeholder: "enter your price" %1> %>
+    <%#   <%= submit_tag "Bid Now!", class: "bid-now-button" %1> %>
+    <%# <% end %1> %>
     <div class="buy-now-button">
         Buy Now!
     </div>
