@@ -71,7 +71,7 @@ function initialize() {
     map.fitBounds(bounds);
 
     $.get("/walkscore", {address: input.value, lat: map.getCenter().lat(), lng: map.getCenter().lng()}, function(data) {
-      $("#placeholder").html(data.walkscore);
+      $("#walk").html(data.walkscore);
     });
 
   });
