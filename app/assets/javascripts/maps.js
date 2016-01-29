@@ -1,4 +1,3 @@
-var currentLocation;
 var map;
 
 navigator.geolocation.getCurrentPosition(function(position){
@@ -10,7 +9,7 @@ navigator.geolocation.getCurrentPosition(function(position){
 function initialize() {
 
   var markers = [];
-    map = new google.maps.Map(document.getElementById('map-canvas'), {
+  map = new google.maps.Map(document.getElementById('map-canvas'), {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
@@ -70,7 +69,11 @@ function initialize() {
 
     map.fitBounds(bounds);
 
-    $.get("/walkscore", {address: input.value, lat: map.getCenter().lat(), lng: map.getCenter().lng()}, function(data) {
+    $.get("/walkscore", {
+      address: input.value,
+      lat: map.getCenter().lat(),
+      lng: map.getCenter().lng()
+    }, function(data) {
       $("#walk").html(data.walkscore);
     });
 
