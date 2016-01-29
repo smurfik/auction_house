@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   get "/search", to: "houses#search"
   get "/walkscore", to: "houses#walkscore"
 
+  post "/bid/:price/:user_id/:house_id", to: "bids#create", as: :create_bid
+
 end
