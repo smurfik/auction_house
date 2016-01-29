@@ -12,4 +12,9 @@ class HousesController < ApplicationController
     @walkscore = Walkscore.find(params["address"], params["lat"], params["lng"])
     render json: @walkscore
   end
+
+  def shut_up_seattle
+    @shutupseattle = ShutUpSeattle.find(params["lat"], params["lng"])
+    render json: @shutupseattle.to_json
+  end
 end

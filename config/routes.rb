@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   get "/house", to: "houses#show"
   get "/search", to: "houses#search"
   get "/walkscore", to: "houses#walkscore"
+  get "/shutupseattle", to: "houses#shut_up_seattle"
 
 end
