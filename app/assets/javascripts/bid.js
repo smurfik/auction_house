@@ -7,8 +7,6 @@ $(document).ready(function() {
     $('.bid-now-button').addClass("styled-bid-button");
 
     $(this).unbind();
-    $('.bid-now-button').click(function() {
-    });
   });
 
   $('.text .bid-now-button').click(function(e) {
