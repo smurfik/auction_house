@@ -1,0 +1,7 @@
+* { outline: 1px pink solid; }
+
+.sign-in {
+  @include outer-container;
+  height: 600px;
+}
+

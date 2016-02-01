@@ -7,32 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="header">
-    <%= link_to image_tag("logo.jpg", class: "logo"), root_path %>
-    <div class="nav">
-      <% if !@current_user %>
-        <div class="right"><%= link_to "Sign Up", new_user_path %></div>
-        <div class="right"><%= link_to "Sign In", "/user-sign-in" %></div>
-      <% else %>
-        <div class="right"><%= link_to "Bid", "#" %></div>
-        <div class="right"><%= link_to "My Account", "#" %></div>
-        <div class="right"><%= link_to "Sign Out", sign_out_path %></div>
-      <% end %>
+  <div class="page-wrap">
+    <div id="header">
+      <%= link_to image_tag("logo.jpg", class: "logo"), root_path %>
+      <div class="nav">
+        <% if !@current_user %>
+          <div class="right"><%= link_to "Sign Up", new_user_path %></div>
+          <div class="right"><%= link_to "Sign In", "/user-sign-in" %></div>
+        <% else %>
+          <div class="right"><%= link_to "Bid", "#" %></div>
+          <div class="right"><%= link_to "My Account", "#" %></div>
+          <div class="right"><%= link_to "Sign Out", sign_out_path %></div>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-
-<% if flash.key?(:notice) %>
-  <div class = 'alert alert-info'>
-    <%= flash[:notice] %>
-  </div>
-<% end %>
+  <% if flash.key?(:notice) %>
+    <div class = 'alert alert-info'>
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
 
 <%= yield %>
+</div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTc8wb5zAQilJ4EhAYSndwdxbrwzGr8eY&libraries=places&callback=initialize" type="text/javascript"></script>
 
-  <div id="footer">
+  <div class="site-footer">
     <div class="center">
       <%= image_tag("copyright.png") %>
       <span>Auction House</span>
