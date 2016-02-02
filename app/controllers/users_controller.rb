@@ -22,7 +22,6 @@ class UsersController < ApplicationController
   def account
     @user   = User.find(session[:user_id])
     @bids   = Bid.all
-    @houses = House.all
   end
 
 

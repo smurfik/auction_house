@@ -32,7 +32,7 @@
         </tr>
         <tr>
           <th><%= bid.created_at.strftime("%m/%d/%Y") %></th>
-          <th><%= bid.houses.address %></th>
+          <th><%= bid.house.address %></th>
           <th><%= bid.price %></th>
           <th>
             <form action="/bid/delete/<%= bid.id %>" method="POST" class="formbutton">
