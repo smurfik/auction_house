@@ -16,9 +16,24 @@
       <h3><span class="city"></span>,<span class="state"></span> <span class="zip"></span></h3>
       <h4><span class="bedrooms"></span> bed <span class="bath"></span> bath <span class="sqft"></span> sqft</h4>
     </div>
-    <div class="bid-now-button">
-      Bid Now!
-    </div>
+    <% if @current_user %>
+      <%= form_tag create_bid_path, method: "POST", class: "form" do %>
+        <%= text_field_tag "bid[price]", nil, placeholder: "enter your price", class: "bid-form" %>
+        <%= text_field_tag "bid[house_id]", nil, type: "hidden" %>
+        <%= text_field_tag "house[zillow_id]", nil, type: "hidden" %>
+        <%= text_field_tag "house[address]", nil, type: "hidden" %>
+        <%= text_field_tag "house[city]", nil, type: "hidden" %>
+        <%= text_field_tag "house[state]", nil, type: "hidden" %>
+        <%= text_field_tag "house[zip]", nil, type: "hidden" %>
+        <%= submit_tag "Bid Now!", class: "bid-now-button" %>
+      <% end %>
+    <% else %>
+      <div class="text">
+      <div class="bid-now-button">
+          Bid Now!
+      </div>
+      </div>
+    <% end %>
     <div class="buy-now-button">
         Buy Now!
     </div>
