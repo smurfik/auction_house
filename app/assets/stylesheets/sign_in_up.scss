@@ -1,0 +1,24 @@
+.sign-in-up {
+  @include outer-container;
+  input { @include span-columns(4); }
+}
+
+.sign-in-up h1 {
+  text-align: center;
+  font-size: 35px;
+}
+
+.sign-in-up .sign-up {
+  text-align: center;
+  clear: both;
+  font-weight: bold;
+}
+
+.sign-in-up input {
+  float: none;
+  margin: auto;
+}
+
+.sign-in-up input:last-child {
+  margin: auto;
+}
