@@ -8,13 +8,13 @@
 
 <div class="sidebar">
   <div class="home-picture">
-    <img src="http://placekitten.com/g/400/301">
+    <img class="image" >
   </div>
   <div class="address-row">
     <div class="address">
-      <h2>4428 Evanston Ave N</h2>
-      <h3>Seattle, WA 98103</h3>
-      <h4>2 beds 1 bath 1,770 sqft</h4>
+      <h2><span class="street"></span></h2>
+      <h3><span class="city"></span>,<span class="state"></span> <span class="zip"></span></h3>
+      <h4><span class="bedrooms"></span> bed <span class="bath"></span> bath <span class="sqft"></span> sqft</h4>
     </div>
     <% if @current_user %>
       <%= form_tag create_bid_path, method: "POST", class: "form" do %>
@@ -43,45 +43,41 @@
     <div class="property-details">
       <div class="sale">
         <h2>For Sale</h2>
-        <h3>Listed Price: $700,000</h3>
-        <h4>Zestimate®: $601,887</h4>
-        <h4>Est. Mortgage:$2,533/mo</h4>
+        <h3>Zestimate®: $<span class="zestimate"></span></h3>
+        <h4>Rent Zestimate: <span class="rent"></span></h4>
       </div>
       <div class="facts">
         <ul>
-          <li>Walk Score: <span id="walk"></span></li>
-          <li>Lot: 3,920 sqft</li>
-          <li>Single Family</li>
-          <li>2 Bedroom, 1.5 Bath</li>
-          <li>Built in 1916</li>
-          <li>Less than 1 day on Zillow</li>
-          <li>Price/sqft: $395</li>
-          <li>MLS #: 886049</li>
+          <li>Walk Score: <span class="walk"></span></li>
+          <li>Lot: <span class="lotsqft"></span> sqft</li>
+          <li><span class="type"></span></li>
+          <li>Built: <span class="year"></span></li>
+          <li>Neighborhood:<span class="neighborhood"></span> </li>
         </ul>
       </div>
     </div>
     <div class="property-details">
       <div class="description">
         <h3>Description:</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <p><span class="description"></span></p>
+        <p class="auto-describe" style="display: none">
+          This property is <span class="sqft"></span> sqft with a lot size of <span class="lotsqft"></span> sqft and was built in <span class="year"></span>. Located in the <span class="neighborhood"></span> neighborhood with a walk score of <span class="walk"></span>, it's most certainly a great place to live.
         </p>
+
+
       </div>
     </div>
     <div class="property-details">
       <div class="facts2">
         <ul>
-          <h4>Additional Features</h4>
-          <li>High School: Roosevelt</li>
-          <li>Finished Basement</li>
-          <li>Close to Transit</li>
-          <li>Attached Garage</li>
-          <li>Garage</li>
+          <li>Date last sold: <span class="sold-date"></span> </li>
+          <li>Price last sold: $<span class="sold-price"></span></li>
         </ul>
       </div>
       <!-- <div class="facts2">
         <ul>
           <h4>Features</h4>
-          <li>Walk Score: 96</li>
+          <li>MLS #: 886049</li>
           <li>Lot: 3,920 sqft</li>
           <li>Single Family</li>
           <li>2 Bedroom, 1.5 Bath</li>
