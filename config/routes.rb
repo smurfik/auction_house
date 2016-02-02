@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get "/new-user", to: "users#new", as: :new_user
   post "/new-user", to: "users#create"
+  get "/account",   to: "users#account", as: :user_account_path
+
 
   get "/sign-out", to: "sessions#sign_out", as: :sign_out
   get "/user-sign-in", to: "users#sign_in"

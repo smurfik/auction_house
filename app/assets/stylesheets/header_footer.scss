@@ -51,3 +51,40 @@ body {
   text-align: center;
   padding-top: 40px;
 }
+
+.account-header {
+  padding: 0 30px;
+  text-align: center;
+}
+
+.account-details {
+  @include span-columns(12);
+  background: #b9c5db;
+  margin-bottom: 10px;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+
+.profile-details {
+  @include span-columns(6);
+  @include shift(4);
+  display: block;
+  padding: 15px;
+}
+
+.gravatar {
+  float: left;
+}
+
+.user-details {
+  float: left;
+}
+
+.user-list {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.ul-user-details {
+  margin-top: 0;
+}

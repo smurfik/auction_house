@@ -1,0 +1,49 @@
+<div class="account-header">
+  <h1>Manage Account</h1>
+</div>
+
+<div class="account-details">
+  <div class="profile-details">
+    <div class="gravatar">
+      <%= gravatar_for "#{@user.email}" %>
+    </div>
+    <div class="user-details">
+      <ul class="ul-user-details">
+        <li class="user-list"><strong><%= "Username: "%></strong><%="#{@user.username}" %></li>
+        <li class="user-list"><strong><%= "E-mail: "%></strong><%="#{@user.email}" %></li>
+        <li class="user-list"><strong><%= "Current City: "%></strong><%="#{@user.current_city}" %></li>
+        <li class="user-list"><strong><%= "Number of Bids Placed: "%></strong><%="#{@user.bids_count}" %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="bid-history">
+  <h2 class="account-header">Last 10 bids</h2>
+  <% if !@current_user %>
+  <% else %>
+    <% @user.bids.each do |bid| %>
+      <table>
+        <colgroup span="4"></colgroup>
+        <tr>
+          <th>Date</th>
+          <th>Address</th>
+          <th>Price</th>
+          <th>Delete?</th>
+        </tr>
+        <tr>
+          <th><%= bid.created_at.strftime("%m/%d/%Y") %></th>
+          <th><%= bid.house_id..... %></th>
+          <th><%= bid.price %></th>
+          <th>
+            <form action="/<%= bid.id %>" method="POST" class="formbutton">
+              <input type="hidden" name="authenticity_token" value="<% form_authenticity_token %>" >
+              <input type="hidden" name="_method" value="DELETE">
+              <input class="button-primary delete" type="submit" value="Delete entry">
+            </form>
+          </th>
+        </tr>
+      </table>
+    <% end %>
+  <% end %>
+</div>

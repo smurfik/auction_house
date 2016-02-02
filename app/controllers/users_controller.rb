@@ -19,6 +19,12 @@ class UsersController < ApplicationController
   def sign_in
   end
 
+  def account
+    @current_user = User.find(session[:user_id])
+    @user = User.find(session[:user_id])
+    @bids = Bid.all
+  end
+
 
 
   private
