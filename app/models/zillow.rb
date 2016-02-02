@@ -20,7 +20,7 @@ class Zillow
     @neighborhood = attrs["searchresults"]["response"]["results"]["result"]["localRealEstate"]["region"]["name"]
     @sqft         = attrs["searchresults"]["response"]["results"]["result"]["finishedSqFt"]
     @rent         = attrs["searchresults"]["response"]["results"]["result"]["rentZestimate"]
-    if attrs["searchresults"]["response"]["results"]["result"]["lastSoldPrice"]["__content__"]
+    if attrs["searchresults"]["response"]["results"]["result"]["lastSoldPrice"]
       @sold_price   = attrs["searchresults"]["response"]["results"]["result"]["lastSoldPrice"]["__content__"]
     end
     if attrs["searchresults"]["response"]["results"]["result"]["lastSoldDate"]
