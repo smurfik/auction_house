@@ -20,10 +20,9 @@
 
 <div class="bid-history">
   <h2 class="account-header">Last 10 bids</h2>
-  <% if !@current_user %>
-  <% else %>
+  <% if @user.bids_count > 0 %>
     <% @user.bids.each do |bid| %>
-      <table>
+      <table class="zebra">
         <colgroup span="4"></colgroup>
         <tr>
           <th>Date</th>
@@ -33,10 +32,10 @@
         </tr>
         <tr>
           <th><%= bid.created_at.strftime("%m/%d/%Y") %></th>
-          <th><%= bid.house_id..... %></th>
+          <th><%= bid.houses.address %></th>
           <th><%= bid.price %></th>
           <th>
-            <form action="/<%= bid.id %>" method="POST" class="formbutton">
+            <form action="/bid/delete/<%= bid.id %>" method="POST" class="formbutton">
               <input type="hidden" name="authenticity_token" value="<% form_authenticity_token %>" >
               <input type="hidden" name="_method" value="DELETE">
               <input class="button-primary delete" type="submit" value="Delete entry">
@@ -45,5 +44,7 @@
         </tr>
       </table>
     <% end %>
+  <% else %>
+    <h3 class="account-header">You haven't placed any bids yet!  What are you waiting for?!</h3>
   <% end %>
 </div>

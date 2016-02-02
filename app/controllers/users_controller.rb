@@ -20,9 +20,9 @@ class UsersController < ApplicationController
   end
 
   def account
-    @current_user = User.find(session[:user_id])
-    @user = User.find(session[:user_id])
-    @bids = Bid.all
+    @user   = User.find(session[:user_id])
+    @bids   = Bid.all
+    @houses = House.all
   end
 
 
