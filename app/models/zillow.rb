@@ -1,8 +1,8 @@
-require 'uri'
+require 'open-uri'
 
 class Zillow
   attr_accessor :street, :zpid, :city, :state, :zipcode, :bedrooms, :bathrooms,
-  :yearBuilt, :lotSizeSqFt, :type, :neighborhood, :images, :zestimate, :edited_facts
+  :yearBuilt, :lotSizeSqFt, :type, :neighborhood, :images, :zestimate, :edited_facts, :last_sold, :description, :rent, :sold_price, :sold_date
 
 
   def initialize(attrs)
@@ -19,22 +19,29 @@ class Zillow
     @type         = attrs["searchresults"]["response"]["results"]["result"]["useCode"]
     @neighborhood = attrs["searchresults"]["response"]["results"]["result"]["localRealEstate"]["region"]["name"]
     @sqft         = attrs["searchresults"]["response"]["results"]["result"]["finishedSqFt"]
+    @rent         = attrs["searchresults"]["response"]["results"]["result"]["rentZestimate"]
+    @sold_price   = attrs["searchresults"]["response"]["results"]["result"]["lastSoldPrice"]["__content__"]
+    @sold_date    = attrs["searchresults"]["response"]["results"]["result"]["lastSoldDate"]
+
   end
 
-  def self.search
-    @address = URI.encode(params[:address])
-  end
+  # def self.search
+  #   @address = URI.encode(params[:address])
+  # end
 
 
-  def self.find(address, city, state, zipcode)
-    response = HTTParty.get("http://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz19vnw1f09vv_82rpe&address=#{address}&citystatezip=#{city}#{state}#{zipcode}")
+  def self.find(address, city, state)
+
+    response = HTTParty.get("http://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz19vnw1f09vv_82rpe&address=#{address}&citystatezip=#{city},#{state}")
+    puts response.inspect
     zillow = self.new response.parsed_response
-    zillow_api = HTTParty.get("http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=X1-ZWz19vnw1f09vv_82rpe&zpid=#{zipcode}")
-    zillow.images = zillow_api
-    zillow.edited_facts = zillow_api
+    zillow_api = HTTParty.get("http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=X1-ZWz19vnw1f09vv_82rpe&zpid=#{zillow.zpid}")
+    zillow.images       = zillow_api["updatedPropertyDetails"]["response"]
+    zillow.edited_facts = zillow_api["updatedPropertyDetails"]["response"]
+    zillow.description  = zillow_api["updatedPropertyDetails"]["response"]["homeDescription"]
     zillow
   end
 
-
+url = "http://www.zillow.com/webservice/GetDeepComps.htm?zws-id=X1-ZWz19vnw1f09vv_82rpe&zpid=48749425&count=5"
 
 end

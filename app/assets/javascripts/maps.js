@@ -30,9 +30,8 @@ function initialize() {
   // pick list. Retrieve the matching places for that item.
   google.maps.event.addListener(searchBox, 'places_changed', function() {
 
-    $.get( "/house", function( data ) {
-      $(".property-details").html( data );
-    });
+    var geocoder = new google.maps.Geocoder();
+
 
     var places = searchBox.getPlaces();
 
@@ -74,9 +73,72 @@ function initialize() {
       lat: map.getCenter().lat(),
       lng: map.getCenter().lng()
     }, function(data) {
-      $("#walk").html(data.walkscore);
+      $(".walk").html(data.walkscore);
     });
 
-  });
+    geocoder.geocode({location: map.getCenter()}, function(location){
+      // console.log(location[0]);
+
+        var place = location[0];
+        var street_number;
+        var street_name;
+        var city;
+        var state;
+
+       for (i=0; i < place.address_components.length; i++) {
+         var type = place.address_components[i].types[0];
+         if (type === "street_number") {
+          street_number = place.address_components[i].short_name;
+        } else if (type === "route") {
+          street_name = place.address_components[i].short_name;
+        } else if (type === "locality") {
+          city = place.address_components[i].short_name;
+        } else if (type === "administrative_area_level_1") {
+           state = place.address_components[i].short_name;
+        }
+       }
+
+       var street = street_number + " " + street_name
+      $.get("/house", {
+        street: street,
+        city: city,
+        state: state
+      }, function(data) {
+        $(".street").html(data.street);
+        $(".city").html(data.city);
+        $(".state").html(data.state);
+        $(".zip").html(data.zipcode);
+        $(".bath").html(data.bathrooms);
+        $(".bedrooms").html(data.bedrooms);
+        $(".type").html(data.type);
+        $(".zestimate").html(data.zestimate);
+        $(".year").html(data.yearBuilt);
+        $(".sqft").html(data.sqft);
+        $(".lotsqft").html(data.lotSizeSqFt);
+        $(".neighborhood").html(data.neighborhood);
+        $(".image").attr("src", data.edited_facts.images.image.url);
+        if (data.description) {
+          $(".description").html(data.description);
+        } else {
+          $(".auto-describe").show();
+        }
+        if (data.rent) {
+          $(".rent").html(data.rent);
+        } else {
+          $(".rent").html("NA");
+        }
+        if (data.sold_date) {
+          $(".sold-date").html(data.sold_date);
+        } else {
+          $(".sold-date").html("NA");
+        }
+        if (data.sold_price) {
+          $(".sold-price").html(data.sold_price);
+        } else {
+          $(".sold-price").html("NA");
+        }
+      });
+      })
+   })
 
 }
