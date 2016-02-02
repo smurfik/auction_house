@@ -21,7 +21,7 @@
 <div class="bid-history">
   <h2 class="account-header">Last 10 bids</h2>
   <% if @user.bids_count > 0 %>
-    <% @user.bids.sort_by{|t| - t.created_at.to_i}.last(10).each do |bid| %>
+    <% @user.bids.last(10).each do |bid| %>
       <table class="zebra">
         <colgroup span="4"></colgroup>
         <tr>
