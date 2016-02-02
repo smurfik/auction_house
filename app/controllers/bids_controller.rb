@@ -16,4 +16,10 @@ class BidsController < ApplicationController
     BidMailer.outbid_notice.deliver_now
   end
 
+  def delete
+    @bid = Bid.find(params[:id])
+    @bid.destroy
+    redirect_to account_path
+  end
+
 end
