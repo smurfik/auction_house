@@ -15,4 +15,10 @@ class BidsController < ApplicationController
     end
   end
 
+  def delete
+    @bid = Bid.find(params[:id])
+    @bid.destroy
+    redirect_to account_path
+  end
+
 end
