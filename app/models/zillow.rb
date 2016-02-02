@@ -20,9 +20,12 @@ class Zillow
     @neighborhood = attrs["searchresults"]["response"]["results"]["result"]["localRealEstate"]["region"]["name"]
     @sqft         = attrs["searchresults"]["response"]["results"]["result"]["finishedSqFt"]
     @rent         = attrs["searchresults"]["response"]["results"]["result"]["rentZestimate"]
-    @sold_price   = attrs["searchresults"]["response"]["results"]["result"]["lastSoldPrice"]["__content__"]
-    @sold_date    = attrs["searchresults"]["response"]["results"]["result"]["lastSoldDate"]
-
+    if attrs["searchresults"]["response"]["results"]["result"]["lastSoldPrice"]["__content__"]
+      @sold_price   = attrs["searchresults"]["response"]["results"]["result"]["lastSoldPrice"]["__content__"]
+    end
+    if attrs["searchresults"]["response"]["results"]["result"]["lastSoldDate"]
+      @sold_date    = attrs["searchresults"]["response"]["results"]["result"]["lastSoldDate"]
+    end
   end
 
   # def self.search
