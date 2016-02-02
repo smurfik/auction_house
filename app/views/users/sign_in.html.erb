@@ -1,12 +1,12 @@
 <% if !@current_user %>
-  <div class="sign-in">
+  <div class="sign-in-up">
     <h1>Sign In</h1>
     <%= form_tag sign_in_path, class:"navbar-form" do %>
       <input type="email" name="email" placeholder="Email" class="form-control">
       <br>
       <input type="password" name="password" placeholder="Password" class="form-control">
       <br>
-      <input type="submit" value="Sign In" class="btn btn-success">
+      <input type="submit" value="Sign In">
       <br>
     <% end %>
     <div class="sign-up">Don't have an account yet? <span><%= link_to "Sign Up", :new_user %></span></div>

@@ -1,32 +1,20 @@
-<div class="container">
+<div class="sign-in-up">
 
-  <h2>Sign Up</h2>
+  <h1>Sign Up</h1>
 
   <%= form_tag "/new-user" do %>
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-  <div>
-    <%= label_tag :email %>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
     <%= email_field_tag "user[email]", nil, placeholder: "email", class: "email", :required => true  %>
-  </div>
-  <div>
-    <%= label_tag :username %>
+    <br>
     <%= text_field_tag "user[username]", nil, placeholder: "username", class: "username", :required => true  %>
-  </div>
-  <div>
-    <%= label_tag :password %>
+    <br>
     <%= password_field_tag "user[password]", nil, placeholder: "password", class: "password", :required => true  %>
-  </div>
-  <div>
-    <%= label_tag :password_confirmation %>
+    <br>
     <%= password_field_tag "user[password_confirmation]", nil, placeholder: "password confirmation", class: "password_confirmation", :required => true %>
-  </div>
-  <div>
-    <%= label_tag :current_city %>
+    <br>
     <%= text_field_tag "user[current_city]", nil, placeholder: "current city", class: "current_city", :required => true  %>
-  </div>
-
-  <%= submit_tag "Sign Up" %>
-
-
+    <br>
+    <%= submit_tag "Sign Up" %>
   <%end%>
+
 </div>
