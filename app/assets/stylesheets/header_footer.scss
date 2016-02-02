@@ -54,6 +54,7 @@ html, body {
 .page-wrap:after {
   content: "";
   display: block;
+  clear: both;
 }
 
 .site-footer, .page-wrap:after {
