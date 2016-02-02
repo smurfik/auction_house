@@ -64,3 +64,54 @@ html, body {
 .site-footer {
   background: #b9c5db;
 }
+.account-header {
+  padding: 0 30px;
+  text-align: center;
+}
+
+.account-details {
+  @include span-columns(12);
+  background: #b9c5db;
+  margin-bottom: 10px;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+
+.profile-details {
+  @include span-columns(6);
+  @include shift(4);
+  display: block;
+  padding: 15px;
+}
+
+.gravatar {
+  float: left;
+}
+
+.user-details {
+  float: left;
+}
+
+.user-list {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.ul-user-details {
+  margin-top: 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 0.25rem;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+tbody tr:nth-child(odd) {
+  background: #eee;
+}
