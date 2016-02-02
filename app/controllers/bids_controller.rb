@@ -13,6 +13,7 @@ class BidsController < ApplicationController
       flash[:notice] = "The bid wasn't placed."
       render 'maps/index'
     end
+    BidMailer.outbid_notice.deliver_now
   end
 
 end
