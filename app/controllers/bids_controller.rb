@@ -3,11 +3,11 @@ class BidsController < ApplicationController
   def create
     @bid = @current_user.bids.new(params.require(:bid).permit(:price, :house_id))
     @house = House.find_by(zillow_id: params[:house][:zillow_id])
-    @old_bid =@house.bids.last
     if @house == nil
       @house = House.create(params.require(:house).permit(:zillow_id, :address, :city, :state, :zip))
     end
     @bid.house_id = @house.id
+    @old_bid =@house.bids.last
     if @bid.save
       if @house.bids.count > 1
         BidMailer.outbid_notice(@house, @bid, @old_bid).deliver_now
