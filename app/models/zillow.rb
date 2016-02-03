@@ -34,7 +34,6 @@ class Zillow
 
 
   def self.find(address, city, state)
-
     response = HTTParty.get("http://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz19vnw1f09vv_82rpe&address=#{address}&citystatezip=#{city},#{state}")
     puts response.inspect
     zillow = self.new response.parsed_response
