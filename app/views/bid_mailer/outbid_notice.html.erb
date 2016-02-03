@@ -1,3 +1,9 @@
-<h1>Greetings !</h1>
+<h1>Greetings <%= @previous_bidder%>!</h1>
 
-<h2>You have been outbid</h2>
+<h3>You have been outbid on house #<%= @zpid %> at <%= @street%>. Your bid was $<%= @last_bid %> and the current bid is $<%= @new_bid %>. Log in to increase your bid and win your dream home!</h3>
+
+<h3>Sincerely,</h3>
+
+<h3>Auction House</h3>
+
+<%= image_tag ("http://socialballroom.dance/wp-content/uploads/2015/02/shrug.jpg") %>
