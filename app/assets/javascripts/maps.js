@@ -104,6 +104,11 @@ function initialize() {
         city: city,
         state: state
       }, function(data) {
+        $(".zpid").val(data.zpid);
+        $(".street").val(data.street);
+        $(".city").val(data.city);
+        $(".state").val(data.state);
+        $(".zip").val(data.zipcode);
         $(".street").html(data.street);
         $(".city").html(data.city);
         $(".state").html(data.state);
@@ -112,6 +117,7 @@ function initialize() {
         $(".bedrooms").html(data.bedrooms);
         $(".type").html(data.type);
         $(".zestimate").html(data.zestimate);
+
         $(".year").html(data.yearBuilt);
         $(".sqft").html(data.sqft);
         $(".lotsqft").html(data.lotSizeSqFt);

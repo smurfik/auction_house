@@ -33,6 +33,8 @@ gem 'httparty'
 
 gem "rubillow"
 
+gem "dotenv-rails"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
