@@ -1,37 +1,44 @@
-* { outline: 1px solid pink }
-
 body {
   margin: 0px;
 }
 
 #header {
-  @include span-columns(12);
-  width: 100%;
+  @include outer-container;
+  height: 100px;
 }
 
-.logo {
-  @include span-columns(1);
+.wrap {
+  background-color: #E4EFF2;
 }
 
-.nav {
-  @include span-columns(11);
-  height: 30px;
-}
-
-.nav .left {
-  @include span-columns(1);
-  display: inline;
-}
-
-.nav .right {
-  @include span-columns(1);
-  display: inline;
+#header ul {
   float: right;
 }
 
-#header .search {
-  @include span-columns(11);
-  height: 30px;
+#header li {
+  display: inline-block;
+  list-style: none;
+  float: right;
+  font-size: 20px;
+}
+
+#header button {
+  padding: 39px 0px 39px 0px;
+  border: 1px solid tint($action-color, 60%);
+  text-shadow: 2px 1px tint($action-color, 60%);
+}
+
+#header .nav a {
+  padding: 39px;
+}
+
+#header .nav a:hover {
+  color: #fff;
+  padding: 39px;
+}
+
+#header button:hover {
+  background-color: tint($action-color, 40%);
 }
 
 .site-footer img {
@@ -40,7 +47,7 @@ body {
 
 .site-footer .center {
   text-align: center;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 html, body {
@@ -50,7 +57,7 @@ html, body {
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -100px;
+  margin-bottom: -70px;
 }
 
 .page-wrap:after {
@@ -60,11 +67,11 @@ html, body {
 }
 
 .site-footer, .page-wrap:after {
-  height: 100px;
+  height: 70px;
 }
 
 .site-footer {
-  background: #b9c5db;
+  background: #E4EFF2;
 }
 .account-header {
   padding: 0 30px;
@@ -73,7 +80,8 @@ html, body {
 
 .account-details {
   @include span-columns(12);
-  background: #b9c5db;
+  // background: #b9c5db;
+  background: #E4EFF2;
   margin-bottom: 10px;
   width: 100%;
   border-bottom: 2px solid black;
