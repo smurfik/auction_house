@@ -8,17 +8,72 @@ navigator.geolocation.getCurrentPosition(function(position){
 
 function initialize() {
 
-  var bidaddress, bidmarker;
+  var bidaddress, bidmarker, bidstreet, bidcity, bidstate;
   var pinsgeocoder = new google.maps.Geocoder();
   $.get("/place-pins", function(data) {
     for (i = 0; i < data.length; i++) {
       bidaddress = data[i].address+data[i].city+data[i].state;
+      bidstreet = data[i].address;
+      bidcity = data[i].city;
+      bidstate = data[i].state;
       pinsgeocoder.geocode({address: bidaddress}, function(data){
         bidmarker = new google.maps.Marker({
           position: data[0].geometry.location,
           map: map
         });
+        bidmarker.addListener('click', function() {
+          console.log($(this.getPosition().lat()));
+          $.get("/house", {
+            street: bidstreet,
+            city: bidcity,
+            state: bidstate
+          }, function(data) {
+            $(".zpid").val(data.zpid);
+            $(".street").val(data.street);
+            $(".city").val(data.city);
+            $(".state").val(data.state);
+            $(".zip").val(data.zipcode);
+            $(".street").html(data.street);
+            $(".city").html(data.city);
+            $(".state").html(data.state);
+            $(".zip").html(data.zipcode);
+            $(".bath").html(data.bathrooms);
+            $(".bedrooms").html(data.bedrooms);
+            $(".type").html(data.type);
+            $(".zestimate").html(data.zestimate);
+
+            $(".year").html(data.yearBuilt);
+            $(".sqft").html(data.sqft);
+            $(".lotsqft").html(data.lotSizeSqFt);
+            $(".neighborhood").html(data.neighborhood);
+            $(".image").attr("src", data.edited_facts.images.image.url);
+            if (data.description) {
+              $(".description").html(data.description);
+            } else {
+              $(".auto-describe").show();
+            }
+            if (data.rent) {
+              $(".rent").html(data.rent);
+            } else {
+              $(".rent").html("NA");
+            }
+            if (data.sold_date) {
+              $(".sold-date").html(data.sold_date);
+            } else {
+              $(".sold-date").html("NA");
+            }
+            if (data.sold_price) {
+              $(".sold-price").html(data.sold_price);
+            } else {
+              $(".sold-price").html("NA");
+            }
+          });
+
+          console.log("me");
+        });
       });
+
+
     };
   });
 
