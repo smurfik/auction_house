@@ -26,6 +26,7 @@ body {
   padding: 39px 0px 39px 0px;
   border: 1px solid tint($action-color, 60%);
   text-shadow: 2px 1px tint($action-color, 60%);
+  border-radius: 0px;
 }
 
 #header .nav a {
