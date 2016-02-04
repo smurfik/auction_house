@@ -1,10 +1,16 @@
+#map-canvas.map-first-load {
+  @include span-columns(12);
+}
+
 #map-canvas {
   @include span-columns(8);
-  // width: 100vw;
   height: calc(100vh - 165px);
   margin: 0;
   padding: 0;
-  // z-index: 0;
+}
+
+.sidebar.first-load {
+  display:none;
 }
 
 .sidebar {
@@ -114,6 +120,7 @@
 }
 .house-details li {
   font-size: 18px;
+  list-style-type: none;
 }
 
 

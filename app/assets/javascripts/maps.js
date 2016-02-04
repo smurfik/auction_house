@@ -68,6 +68,9 @@ function initialize() {
 
     map.fitBounds(bounds);
 
+    $(".sidebar.first-load").removeClass("first-load");
+    $("#map-canvas.map-first-load").removeClass("map-first-load");
+
     $.get("/walkscore", {
       address: input.value,
       lat: map.getCenter().lat(),
@@ -120,6 +123,7 @@ function initialize() {
           $(".image").attr("src", "http://www.croestate.com/assets/images/no_photo.png");
         } else if (parseInt(data.images.count) > 1) {
             $(".zillow-pictures").html("");
+            $(".image").attr("src", data.images.image.url[0]);
             var z_images = data.images.image.url;
             for (i = 0; i < z_images.length; i++) {
               $(".zillow-pictures").prepend('<img src="' + z_images[i] + '" />');
