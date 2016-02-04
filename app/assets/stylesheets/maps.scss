@@ -27,8 +27,6 @@
   @include span-columns(8);
 }
 
-
-
 .home-picture {
   margin-bottom: 10px;
 }
@@ -212,6 +210,12 @@
 	top:1px;
 }
 
+.zillow-pictures {
+  width: 100%;
+  @include clearfix;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
 
 // ************** House View *****************
 
@@ -225,5 +229,6 @@
 
 .image {
   display: inline-block;
-  float: right;
+  float: left;
+  margin-bottom: 20px;
 }

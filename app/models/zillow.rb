@@ -39,12 +39,11 @@ class Zillow
     puts response.inspect
     zillow = self.new response.parsed_response
     zillow_api = HTTParty.get("http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=X1-ZWz19vnw1f09vv_82rpe&zpid=#{zillow.zpid}")
-    zillow.images       = zillow_api["updatedPropertyDetails"]["response"]
-    zillow.edited_facts = zillow_api["updatedPropertyDetails"]["response"]
-    zillow.description  = zillow_api["updatedPropertyDetails"]["response"]["homeDescription"]
+    if zillow_api["updatedPropertyDetails"]["response"]
+      zillow.images       = zillow_api["updatedPropertyDetails"]["response"]["images"]
+      zillow.edited_facts = zillow_api["updatedPropertyDetails"]["response"]
+    else
+    end
     zillow
   end
-
-url = "http://www.zillow.com/webservice/GetDeepComps.htm?zws-id=X1-ZWz19vnw1f09vv_82rpe&zpid=48749425&count=5"
-
 end

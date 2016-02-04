@@ -111,19 +111,30 @@ function initialize() {
         $(".bath").html(data.bathrooms);
         $(".bedrooms").html(data.bedrooms);
         $(".type").html(data.type);
-        $(".zestimate").html(data.zestimate);
+        $(".zestimate").html(data.zestimate.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
         $(".year").html(data.yearBuilt);
-        $(".sqft").html(data.sqft);
-        $(".lotsqft").html(data.lotSizeSqFt);
+        $(".sqft").html(data.sqft.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+        $(".lotsqft").html(data.lotSizeSqFt.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
         $(".neighborhood").html(data.neighborhood);
-        $(".image").attr("src", data.edited_facts.images.image.url);
+        if (!data.images) {
+          $(".image").attr("src", "http://www.croestate.com/assets/images/no_photo.png");
+        } else if (parseInt(data.images.count) > 1) {
+            $(".zillow-pictures").html("");
+            var z_images = data.images.image.url;
+            for (i = 0; i < z_images.length; i++) {
+              $(".zillow-pictures").prepend('<img src="' + z_images[i] + '" />');
+            }
+        } else {
+          $(".zillow-pictures").html("");
+          $(".image").attr("src", data.images.image.url);
+        }
         if (data.description) {
-          $(".description").html(data.description);
+          $(".description").html(data.homeDescription);
         } else {
           $(".auto-describe").show();
         }
         if (data.rent) {
-          $(".rent").html(data.rent);
+          $(".rent").html(data.rent.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
         } else {
           $(".rent").html("NA");
         }
@@ -133,12 +144,11 @@ function initialize() {
           $(".sold-date").html("NA");
         }
         if (data.sold_price) {
-          $(".sold-price").html(data.sold_price);
+          $(".sold-price").html(data.sold_price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
         } else {
           $(".sold-price").html("NA");
         }
       });
-      })
-   })
-
-}
+    });
+  });
+  }
