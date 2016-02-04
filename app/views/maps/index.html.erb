@@ -20,11 +20,11 @@
       <%= form_tag create_bid_path, method: "POST", class: "form" do %>
         <%= text_field_tag "bid[price]", nil, placeholder: "enter your price", class: "bid-form" %>
         <%= text_field_tag "bid[house_id]", nil, type: "hidden" %>
-        <%= text_field_tag "house[zillow_id]", nil, type: "hidden" %>
-        <%= text_field_tag "house[address]", nil, type: "hidden" %>
-        <%= text_field_tag "house[city]", nil, type: "hidden" %>
-        <%= text_field_tag "house[state]", nil, type: "hidden" %>
-        <%= text_field_tag "house[zip]", nil, type: "hidden" %>
+        <%= text_field_tag "house[zillow_id]", nil, class: "zpid" , type: "hidden" %>
+        <%= text_field_tag "house[address]", nil, class: "street", type: "hidden" %>
+        <%= text_field_tag "house[city]", nil, class: "city", type: "hidden" %>
+        <%= text_field_tag "house[state]", nil, class: "state", type: "hidden" %>
+        <%= text_field_tag "house[zip]", nil, class: "zip", type: "hidden" %>
         <%= submit_tag "Bid Now!", class: "bid-now-button" %>
       <% end %>
     <% else %>
