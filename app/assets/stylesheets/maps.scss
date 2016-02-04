@@ -79,6 +79,13 @@
   padding-left: 0;
 }
 
+.notice {
+  width: 100%;
+  color: green;
+  @include clearfix;
+  padding-bottom: 10px;
+}
+
 
 .sale {
   margin-top: 15px;

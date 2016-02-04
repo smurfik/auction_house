@@ -39134,3 +39134,1485 @@ Processing by MapsController#index as HTML
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
   Rendered maps/index.html.erb within layouts/application (0.8ms)
 Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-02-04 14:46:07 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MapsController#index as HTML
+  [1m[35mUser Load (7.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.8ms)[0m  [1mSELECT  "houses".* FROM "houses" LIMIT 1[0m
+  Rendered maps/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 1198ms (Views: 1079.7ms | ActiveRecord: 25.5ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-04 14:46:09 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-04 14:46:09 -0800
+
+
+Started GET "/assets/maps_search.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-02-04 14:46:09 -0800
+
+
+Started GET "/assets/maps.self-7644c19d07ad9e545bbed51e71e3276e5c18edf7ce60561e796e04ac4d5f06d1.js?body=1" for ::1 at 2016-02-04 14:46:09 -0800
+
+
+Started GET "/assets/application.self-08881a283dda94346ff3fb51b899c14b7758130a697ce2394e9e472decff2a3a.css?body=1" for ::1 at 2016-02-04 14:46:09 -0800
+
+
+Started GET "/assets/bid.self-de396db61b29563dfd2172f8659e6f8ca25f4674ad777cc1738901792d0a15fc.js?body=1" for ::1 at 2016-02-04 14:46:09 -0800
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-02-04 14:46:09 -0800
+
+
+Started GET "/assets/logo-aad91b50f1622fc009e58740a2ebe1b8349004eca5350cf99ba98c16ee167921.jpg" for ::1 at 2016-02-04 14:46:09 -0800
+
+
+Started GET "/assets/copyright-3915c0d7f0f648aea3c009d9eadc46543f930c5acf3e16e62457d625ac5ff100.png" for ::1 at 2016-02-04 14:46:09 -0800
+
+
+Started GET "/walkscore?address=1563+6th+Avenue+South%2C+Seattle%2C+WA%2C+United+States&lat=47.588715&lng=-122.32662600000003" for ::1 at 2016-02-04 14:46:17 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"1563 6th Avenue South, Seattle, WA, United States", "lat"=>"47.588715", "lng"=>"-122.32662600000003"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 203ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/house?street=1563+6th+Ave+S&city=Seattle&state=WA" for ::1 at 2016-02-04 14:46:17 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"1563 6th Ave S", "city"=>"Seattle", "state"=>"WA"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 500 Internal Server Error in 520ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/zillow.rb:8:in `initialize'
+  app/models/zillow.rb:33:in `new'
+  app/models/zillow.rb:33:in `find'
+  app/controllers/houses_controller.rb:5:in `show'
+
+
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.2ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (85.2ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (64.7ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (159.1ms)
+
+
+Started GET "/walkscore?address=8534+Phinney+Avenue+North%2C+Seattle%2C+WA%2C+United+States&lat=47.691782&lng=-122.35357199999999" for ::1 at 2016-02-04 14:46:24 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8534 Phinney Avenue North, Seattle, WA, United States", "lat"=>"47.691782", "lng"=>"-122.35357199999999"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 288ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/house?street=8534+Phinney+Ave+N&city=Seattle&state=WA" for ::1 at 2016-02-04 14:46:24 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8534 Phinney Ave N", "city"=>"Seattle", "state"=>"WA"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 165ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:46:32 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NyUbStLlhh9P/JhATMAypgwjCH71RttDWzPzt3lEo5F1gVrV74JCCGKePFMSFvSSP61H2/vbInyOgQB4lldeqw==", "bid"=>{"price"=>"16", "house_id"=>""}, "house"=>{"zillow_id"=>"63338325", "address"=>"8534 Phinney Ave N", "city"=>"Seattle", "state"=>"WA", "zip"=>"98103"}}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1[0m  [["zillow_id", 63338325]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mHouse Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "houses" WHERE "houses"."zillow_id" = 63338325 LIMIT 1[0m
+  [1m[35mSQL (2.5ms)[0m  INSERT INTO "houses" ("zillow_id", "address", "city", "state", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["zillow_id", 63338325], ["address", "8534 Phinney Ave N"], ["city", "Seattle"], ["state", "WA"], ["zip", 98103], ["created_at", "2016-02-04 22:46:32.282550"], ["updated_at", "2016-02-04 22:46:32.282550"]]
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mBid Load (0.5ms)[0m  SELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1  [["house_id", 31]]
+  [1m[36m (0.3ms)[0m  [1mSELECT MAX("bids"."price") FROM "bids" WHERE "bids"."house_id" = $1[0m  [["house_id", 31]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "bids" ("price", "user_id", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["price", 16], ["user_id", 5], ["house_id", 31], ["created_at", "2016-02-04 22:46:32.317782"], ["updated_at", "2016-02-04 22:46:32.317782"]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "bids_count" = COALESCE("bids_count", 0) + 1 WHERE "users"."id" = $1  [["id", 5]]
+  [1m[36mHouse Load (0.3ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 31]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "houses" SET "bids_count" = COALESCE("bids_count", 0) + 1 WHERE "houses"."id" = $1  [["id", 31]]
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "bids" WHERE "bids"."house_id" = $1  [["house_id", 31]]
+Completed 0  in 163ms (Views: 0.3ms | ActiveRecord: 16.2ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:46:32 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NyUbStLlhh9P/JhATMAypgwjCH71RttDWzPzt3lEo5F1gVrV74JCCGKePFMSFvSSP61H2/vbInyOgQB4lldeqw==", "bid"=>{"price"=>"16", "house_id"=>""}, "house"=>{"zillow_id"=>"63338325", "address"=>"8534 Phinney Ave N", "city"=>"Seattle", "state"=>"WA", "zip"=>"98103"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 63338325]]
+  [1m[36mBid Load (0.6ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 31]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-02-04 14:48:36 -0800
+Processing by MapsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" LIMIT 1
+  Rendered maps/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 87ms (Views: 62.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/maps_search.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-02-04 14:48:37 -0800
+
+
+Started GET "/assets/application.self-08881a283dda94346ff3fb51b899c14b7758130a697ce2394e9e472decff2a3a.css?body=1" for ::1 at 2016-02-04 14:48:37 -0800
+
+
+Started GET "/assets/bid.self-de396db61b29563dfd2172f8659e6f8ca25f4674ad777cc1738901792d0a15fc.js?body=1" for ::1 at 2016-02-04 14:48:37 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-04 14:48:37 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-04 14:48:37 -0800
+
+
+Started GET "/assets/maps.self-7644c19d07ad9e545bbed51e71e3276e5c18edf7ce60561e796e04ac4d5f06d1.js?body=1" for ::1 at 2016-02-04 14:48:37 -0800
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-02-04 14:48:37 -0800
+
+
+Started GET "/assets/logo-aad91b50f1622fc009e58740a2ebe1b8349004eca5350cf99ba98c16ee167921.jpg" for ::1 at 2016-02-04 14:48:37 -0800
+
+
+Started GET "/assets/copyright-3915c0d7f0f648aea3c009d9eadc46543f930c5acf3e16e62457d625ac5ff100.png" for ::1 at 2016-02-04 14:48:37 -0800
+
+
+Started GET "/account" for ::1 at 2016-02-04 14:48:40 -0800
+Processing by UsersController#account as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mBid Load (0.2ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."user_id" = $1  ORDER BY "bids"."id" DESC LIMIT 10[0m  [["user_id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 23]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 25]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 26]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 27]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 28]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 29]]
+  [1m[35mHouse Load (0.5ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 30]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 31]]
+  Rendered users/account.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 72ms (Views: 60.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/account" for ::1 at 2016-02-04 14:48:45 -0800
+Processing by UsersController#account as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mBid Load (0.4ms)[0m  SELECT  "bids".* FROM "bids" WHERE "bids"."user_id" = $1  ORDER BY "bids"."id" DESC LIMIT 10  [["user_id", 5]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 23]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 25]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 26]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 27]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 29]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 30]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 31]]
+  Rendered users/account.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 40ms (Views: 36.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2016-02-04 14:48:47 -0800
+Processing by MapsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" LIMIT 1
+  Rendered maps/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/walkscore?address=8534+Phinney+Ave+N%2C+Seattle%2C+WA%2C+United+States&lat=47.691782&lng=-122.35357199999999" for ::1 at 2016-02-04 14:48:50 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8534 Phinney Ave N, Seattle, WA, United States", "lat"=>"47.691782", "lng"=>"-122.35357199999999"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 547ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/house?street=8534+Phinney+Ave+N&city=Seattle&state=WA" for ::1 at 2016-02-04 14:48:51 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8534 Phinney Ave N", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 186ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:48:54 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aBW04LFgGmzjam1BYws5L5OhPvuuomk3QxC4mdg1sbsqsfV/jAfee84IyVI93f8boC9xXqA/kAiWoktWNyZMgQ==", "bid"=>{"price"=>"15", "house_id"=>""}, "house"=>{"zillow_id"=>"63338325", "address"=>"8534 Phinney Ave N", "city"=>"Seattle", "state"=>"WA", "zip"=>"98103"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 63338325]]
+  [1m[36mBid Load (0.3ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 31]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/walkscore?address=3692+Crystal+Springs+Drive+Northeast%2C+Bainbridge+Island%2C+WA%2C+United+States&lat=47.596881&lng=-122.57522899999998" for ::1 at 2016-02-04 14:49:04 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"3692 Crystal Springs Drive Northeast, Bainbridge Island, WA, United States", "lat"=>"47.596881", "lng"=>"-122.57522899999998"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 172ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/house?street=3692+Crystal+Springs+Dr+NE&city=Bainbridge+Island&state=WA" for ::1 at 2016-02-04 14:49:04 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"3692 Crystal Springs Dr NE", "city"=>"Bainbridge Island", "state"=>"WA"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/zillow.rb:37:in `find'
+  app/controllers/houses_controller.rb:5:in `show'
+
+
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.9ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (59.9ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (54.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (124.1ms)
+
+
+Started GET "/walkscore?address=35671+Dow+Lane%2C+Astoria%2C+OR%2C+United+States&lat=46.13920299999999&lng=-123.833843" for ::1 at 2016-02-04 14:49:11 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"35671 Dow Lane, Astoria, OR, United States", "lat"=>"46.13920299999999", "lng"=>"-123.833843"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 363ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/house?street=35671+Dow+Ln&city=Astoria&state=OR" for ::1 at 2016-02-04 14:49:11 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"35671 Dow Ln", "city"=>"Astoria", "state"=>"OR"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/zillow.rb:37:in `find'
+  app/controllers/houses_controller.rb:5:in `show'
+
+
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (46.0ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.2ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (90.3ms)
+
+
+Started GET "/walkscore?address=6734+Latona+Ave+NE%2C+Seattle%2C+WA%2C+United+States&lat=47.67757499999999&lng=-122.32721520000001" for ::1 at 2016-02-04 14:49:23 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"6734 Latona Ave NE, Seattle, WA, United States", "lat"=>"47.67757499999999", "lng"=>"-122.32721520000001"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 143ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/house?street=6851-6857+Woodlawn+Ave+NE&city=Seattle&state=WA" for ::1 at 2016-02-04 14:49:23 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"6851-6857 Woodlawn Ave NE", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/zillow.rb:8:in `initialize'
+  app/models/zillow.rb:33:in `new'
+  app/models/zillow.rb:33:in `find'
+  app/controllers/houses_controller.rb:5:in `show'
+
+
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.1ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (65.8ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (40.6ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (92.9ms)
+
+
+Started GET "/walkscore?address=8225+4th+Ave+NE%2C+Seattle%2C+WA%2C+United+States&lat=47.689088999999996&lng=-122.32471099999998" for ::1 at 2016-02-04 14:49:32 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8225 4th Ave NE, Seattle, WA, United States", "lat"=>"47.689088999999996", "lng"=>"-122.32471099999998"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 173ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/house?street=8225+4th+Ave+NE&city=Seattle&state=WA" for ::1 at 2016-02-04 14:49:33 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8225 4th Ave NE", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 156ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:49:41 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aBW04LFgGmzjam1BYws5L5OhPvuuomk3QxC4mdg1sbsqsfV/jAfee84IyVI93f8boC9xXqA/kAiWoktWNyZMgQ==", "bid"=>{"price"=>"15", "house_id"=>""}, "house"=>{"zillow_id"=>"48776534", "address"=>"8225 4th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (2.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (1.7ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48776534]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mHouse Exists (0.3ms)[0m  SELECT  1 AS one FROM "houses" WHERE "houses"."zillow_id" = 48776534 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "houses" ("zillow_id", "address", "city", "state", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["zillow_id", 48776534], ["address", "8225 4th Ave NE"], ["city", "Seattle"], ["state", "WA"], ["zip", 98115], ["created_at", "2016-02-04 22:49:41.554521"], ["updated_at", "2016-02-04 22:49:41.554521"]]
+  [1m[35m (2.2ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mSELECT MAX("bids"."price") FROM "bids" WHERE "bids"."house_id" = $1[0m  [["house_id", 32]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "bids" ("price", "user_id", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["price", 15], ["user_id", 5], ["house_id", 32], ["created_at", "2016-02-04 22:49:41.562104"], ["updated_at", "2016-02-04 22:49:41.562104"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "bids_count" = COALESCE("bids_count", 0) + 1 WHERE "users"."id" = $1  [["id", 5]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "houses" SET "bids_count" = COALESCE("bids_count", 0) + 1 WHERE "houses"."id" = $1  [["id", 32]]
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "bids" WHERE "bids"."house_id" = $1  [["house_id", 32]]
+Completed 0  in 29ms (Views: 0.2ms | ActiveRecord: 11.5ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:49:41 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aBW04LFgGmzjam1BYws5L5OhPvuuomk3QxC4mdg1sbsqsfV/jAfee84IyVI93f8boC9xXqA/kAiWoktWNyZMgQ==", "bid"=>{"price"=>"15", "house_id"=>""}, "house"=>{"zillow_id"=>"48776534", "address"=>"8225 4th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48776534]]
+  [1m[36mBid Load (0.2ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 32]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:49:41 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aBW04LFgGmzjam1BYws5L5OhPvuuomk3QxC4mdg1sbsqsfV/jAfee84IyVI93f8boC9xXqA/kAiWoktWNyZMgQ==", "bid"=>{"price"=>"15", "house_id"=>""}, "house"=>{"zillow_id"=>"48776534", "address"=>"8225 4th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48776534]]
+  [1m[36mBid Load (0.4ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 32]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:49:41 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aBW04LFgGmzjam1BYws5L5OhPvuuomk3QxC4mdg1sbsqsfV/jAfee84IyVI93f8boC9xXqA/kAiWoktWNyZMgQ==", "bid"=>{"price"=>"15", "house_id"=>""}, "house"=>{"zillow_id"=>"48776534", "address"=>"8225 4th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48776534]]
+  [1m[36mBid Load (0.4ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 32]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:49:41 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aBW04LFgGmzjam1BYws5L5OhPvuuomk3QxC4mdg1sbsqsfV/jAfee84IyVI93f8boC9xXqA/kAiWoktWNyZMgQ==", "bid"=>{"price"=>"15", "house_id"=>""}, "house"=>{"zillow_id"=>"48776534", "address"=>"8225 4th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48776534]]
+  [1m[36mBid Load (0.2ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 32]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-02-04 14:49:45 -0800
+Processing by MapsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" LIMIT 1
+  Rendered maps/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-08881a283dda94346ff3fb51b899c14b7758130a697ce2394e9e472decff2a3a.css?body=1" for ::1 at 2016-02-04 14:49:45 -0800
+
+
+Started GET "/assets/maps.self-7644c19d07ad9e545bbed51e71e3276e5c18edf7ce60561e796e04ac4d5f06d1.js?body=1" for ::1 at 2016-02-04 14:49:45 -0800
+
+
+Started GET "/assets/maps_search.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-02-04 14:49:45 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-04 14:49:45 -0800
+
+
+Started GET "/assets/bid.self-de396db61b29563dfd2172f8659e6f8ca25f4674ad777cc1738901792d0a15fc.js?body=1" for ::1 at 2016-02-04 14:49:45 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-04 14:49:45 -0800
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-02-04 14:49:45 -0800
+
+
+Started GET "/assets/logo-aad91b50f1622fc009e58740a2ebe1b8349004eca5350cf99ba98c16ee167921.jpg" for ::1 at 2016-02-04 14:49:45 -0800
+
+
+Started GET "/assets/copyright-3915c0d7f0f648aea3c009d9eadc46543f930c5acf3e16e62457d625ac5ff100.png" for ::1 at 2016-02-04 14:49:45 -0800
+
+
+Started GET "/walkscore?address=8225+4th+Ave+NE%2C+Seattle%2C+WA%2C+United+States&lat=47.689088999999996&lng=-122.32471099999998" for ::1 at 2016-02-04 14:49:55 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8225 4th Ave NE, Seattle, WA, United States", "lat"=>"47.689088999999996", "lng"=>"-122.32471099999998"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 110ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/house?street=8225+4th+Ave+NE&city=Seattle&state=WA" for ::1 at 2016-02-04 14:49:55 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8225 4th Ave NE", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 158ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:49:58 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uLKZ4zXpIc+JMq1R2d8Ns5gQXmz15AsEWXvchzFP2Aj6Fth8CI7l2KRQCUKHCcuHq54Ryft58juMyS9I3lwlMg==", "bid"=>{"price"=>"76", "house_id"=>""}, "house"=>{"zillow_id"=>"48776534", "address"=>"8225 4th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48776534]]
+  [1m[36mBid Load (0.3ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 32]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/walkscore?address=8225+7th+Ave+NW%2C+Seattle%2C+WA%2C+United+States&lat=47.69427509999999&lng=-122.3646789" for ::1 at 2016-02-04 14:51:00 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8225 7th Ave NW, Seattle, WA, United States", "lat"=>"47.69427509999999", "lng"=>"-122.3646789"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 167ms (Views: 0.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/house?street=9013+7th+Ave+NW&city=Seattle&state=WA" for ::1 at 2016-02-04 14:51:01 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"9013 7th Ave NW", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 500 Internal Server Error in 555ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/zillow.rb:37:in `find'
+  app/controllers/houses_controller.rb:5:in `show'
+
+
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (58.7ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (57.9ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (120.9ms)
+
+
+Started GET "/walkscore?address=8225+8th+Ave+NW%2C+Seattle%2C+WA%2C+United+States&lat=47.68847539999998&lng=-122.36596409999999" for ::1 at 2016-02-04 14:51:05 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8225 8th Ave NW, Seattle, WA, United States", "lat"=>"47.68847539999998", "lng"=>"-122.36596409999999"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 162ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/house?street=8208+8th+Ave+NW&city=Seattle&state=WA" for ::1 at 2016-02-04 14:51:05 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8208 8th Ave NW", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 1481ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:15 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uLKZ4zXpIc+JMq1R2d8Ns5gQXmz15AsEWXvchzFP2Aj6Fth8CI7l2KRQCUKHCcuHq54Ryft58juMyS9I3lwlMg==", "bid"=>{"price"=>"78", "house_id"=>""}, "house"=>{"zillow_id"=>"48836255", "address"=>"8208 8th Ave NW", "city"=>"Seattle", "state"=>"WA", "zip"=>"98117"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48836255]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mHouse Exists (0.2ms)[0m  SELECT  1 AS one FROM "houses" WHERE "houses"."zillow_id" = 48836255 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "houses" ("zillow_id", "address", "city", "state", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["zillow_id", 48836255], ["address", "8208 8th Ave NW"], ["city", "Seattle"], ["state", "WA"], ["zip", 98117], ["created_at", "2016-02-04 22:51:15.494541"], ["updated_at", "2016-02-04 22:51:15.494541"]]
+  [1m[35m (2.0ms)[0m  COMMIT
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 5.5ms)
+
+RuntimeError ():
+  app/controllers/bids_controller.rb:10:in `create'
+
+
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (59.1ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (40.7ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (90.5ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:15 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uLKZ4zXpIc+JMq1R2d8Ns5gQXmz15AsEWXvchzFP2Aj6Fth8CI7l2KRQCUKHCcuHq54Ryft58juMyS9I3lwlMg==", "bid"=>{"price"=>"78", "house_id"=>""}, "house"=>{"zillow_id"=>"48836255", "address"=>"8208 8th Ave NW", "city"=>"Seattle", "state"=>"WA", "zip"=>"98117"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48836255]]
+  [1m[36mBid Load (0.2ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 33]]
+  [1m[35m (0.3ms)[0m  SELECT MAX("bids"."price") FROM "bids" WHERE "bids"."house_id" = $1  [["house_id", 33]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "bids" ("price", "user_id", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["price", 78], ["user_id", 5], ["house_id", 33], ["created_at", "2016-02-04 22:51:15.742767"], ["updated_at", "2016-02-04 22:51:15.742767"]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "bids_count" = COALESCE("bids_count", 0) + 1 WHERE "users"."id" = $1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 33]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "houses" SET "bids_count" = COALESCE("bids_count", 0) + 1 WHERE "houses"."id" = $1[0m  [["id", 33]]
+  [1m[35m (2.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "bids" WHERE "bids"."house_id" = $1[0m  [["house_id", 33]]
+Completed 0  in 18ms (Views: 0.2ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:15 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uLKZ4zXpIc+JMq1R2d8Ns5gQXmz15AsEWXvchzFP2Aj6Fth8CI7l2KRQCUKHCcuHq54Ryft58juMyS9I3lwlMg==", "bid"=>{"price"=>"78", "house_id"=>""}, "house"=>{"zillow_id"=>"48836255", "address"=>"8208 8th Ave NW", "city"=>"Seattle", "state"=>"WA", "zip"=>"98117"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1[0m  [["zillow_id", 48836255]]
+  [1m[35mBid Load (0.2ms)[0m  SELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1  [["house_id", 33]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:16 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uLKZ4zXpIc+JMq1R2d8Ns5gQXmz15AsEWXvchzFP2Aj6Fth8CI7l2KRQCUKHCcuHq54Ryft58juMyS9I3lwlMg==", "bid"=>{"price"=>"78", "house_id"=>""}, "house"=>{"zillow_id"=>"48836255", "address"=>"8208 8th Ave NW", "city"=>"Seattle", "state"=>"WA", "zip"=>"98117"}}
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1[0m  [["zillow_id", 48836255]]
+  [1m[35mBid Load (0.3ms)[0m  SELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1  [["house_id", 33]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:16 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uLKZ4zXpIc+JMq1R2d8Ns5gQXmz15AsEWXvchzFP2Aj6Fth8CI7l2KRQCUKHCcuHq54Ryft58juMyS9I3lwlMg==", "bid"=>{"price"=>"78", "house_id"=>""}, "house"=>{"zillow_id"=>"48836255", "address"=>"8208 8th Ave NW", "city"=>"Seattle", "state"=>"WA", "zip"=>"98117"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.3ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1[0m  [["zillow_id", 48836255]]
+  [1m[35mBid Load (0.6ms)[0m  SELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1  [["house_id", 33]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:16 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uLKZ4zXpIc+JMq1R2d8Ns5gQXmz15AsEWXvchzFP2Aj6Fth8CI7l2KRQCUKHCcuHq54Ryft58juMyS9I3lwlMg==", "bid"=>{"price"=>"78", "house_id"=>""}, "house"=>{"zillow_id"=>"48836255", "address"=>"8208 8th Ave NW", "city"=>"Seattle", "state"=>"WA", "zip"=>"98117"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1[0m  [["zillow_id", 48836255]]
+  [1m[35mBid Load (0.2ms)[0m  SELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1  [["house_id", 33]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:17 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uLKZ4zXpIc+JMq1R2d8Ns5gQXmz15AsEWXvchzFP2Aj6Fth8CI7l2KRQCUKHCcuHq54Ryft58juMyS9I3lwlMg==", "bid"=>{"price"=>"78", "house_id"=>""}, "house"=>{"zillow_id"=>"48836255", "address"=>"8208 8th Ave NW", "city"=>"Seattle", "state"=>"WA", "zip"=>"98117"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1[0m  [["zillow_id", 48836255]]
+  [1m[35mBid Load (0.2ms)[0m  SELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1  [["house_id", 33]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:17 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uLKZ4zXpIc+JMq1R2d8Ns5gQXmz15AsEWXvchzFP2Aj6Fth8CI7l2KRQCUKHCcuHq54Ryft58juMyS9I3lwlMg==", "bid"=>{"price"=>"78", "house_id"=>""}, "house"=>{"zillow_id"=>"48836255", "address"=>"8208 8th Ave NW", "city"=>"Seattle", "state"=>"WA", "zip"=>"98117"}}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1[0m  [["zillow_id", 48836255]]
+  [1m[35mBid Load (0.3ms)[0m  SELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1  [["house_id", 33]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:17 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uLKZ4zXpIc+JMq1R2d8Ns5gQXmz15AsEWXvchzFP2Aj6Fth8CI7l2KRQCUKHCcuHq54Ryft58juMyS9I3lwlMg==", "bid"=>{"price"=>"78", "house_id"=>""}, "house"=>{"zillow_id"=>"48836255", "address"=>"8208 8th Ave NW", "city"=>"Seattle", "state"=>"WA", "zip"=>"98117"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1[0m  [["zillow_id", 48836255]]
+  [1m[35mBid Load (0.3ms)[0m  SELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1  [["house_id", 33]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:17 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uLKZ4zXpIc+JMq1R2d8Ns5gQXmz15AsEWXvchzFP2Aj6Fth8CI7l2KRQCUKHCcuHq54Ryft58juMyS9I3lwlMg==", "bid"=>{"price"=>"78", "house_id"=>""}, "house"=>{"zillow_id"=>"48836255", "address"=>"8208 8th Ave NW", "city"=>"Seattle", "state"=>"WA", "zip"=>"98117"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.3ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1[0m  [["zillow_id", 48836255]]
+  [1m[35mBid Load (0.2ms)[0m  SELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1  [["house_id", 33]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:17 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uLKZ4zXpIc+JMq1R2d8Ns5gQXmz15AsEWXvchzFP2Aj6Fth8CI7l2KRQCUKHCcuHq54Ryft58juMyS9I3lwlMg==", "bid"=>{"price"=>"78", "house_id"=>""}, "house"=>{"zillow_id"=>"48836255", "address"=>"8208 8th Ave NW", "city"=>"Seattle", "state"=>"WA", "zip"=>"98117"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1[0m  [["zillow_id", 48836255]]
+  [1m[35mBid Load (0.3ms)[0m  SELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1  [["house_id", 33]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:17 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uLKZ4zXpIc+JMq1R2d8Ns5gQXmz15AsEWXvchzFP2Aj6Fth8CI7l2KRQCUKHCcuHq54Ryft58juMyS9I3lwlMg==", "bid"=>{"price"=>"78", "house_id"=>""}, "house"=>{"zillow_id"=>"48836255", "address"=>"8208 8th Ave NW", "city"=>"Seattle", "state"=>"WA", "zip"=>"98117"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.3ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1[0m  [["zillow_id", 48836255]]
+  [1m[35mBid Load (0.4ms)[0m  SELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1  [["house_id", 33]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-02-04 14:51:18 -0800
+Processing by MapsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.3ms)[0m  [1mSELECT  "houses".* FROM "houses" LIMIT 1[0m
+  Rendered maps/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 63ms (Views: 60.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-04 14:51:18 -0800
+
+
+Started GET "/assets/application.self-08881a283dda94346ff3fb51b899c14b7758130a697ce2394e9e472decff2a3a.css?body=1" for ::1 at 2016-02-04 14:51:18 -0800
+
+
+Started GET "/assets/maps_search.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-02-04 14:51:18 -0800
+
+
+Started GET "/assets/maps.self-7644c19d07ad9e545bbed51e71e3276e5c18edf7ce60561e796e04ac4d5f06d1.js?body=1" for ::1 at 2016-02-04 14:51:18 -0800
+
+
+Started GET "/assets/bid.self-de396db61b29563dfd2172f8659e6f8ca25f4674ad777cc1738901792d0a15fc.js?body=1" for ::1 at 2016-02-04 14:51:18 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-04 14:51:18 -0800
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-02-04 14:51:18 -0800
+
+
+Started GET "/assets/logo-aad91b50f1622fc009e58740a2ebe1b8349004eca5350cf99ba98c16ee167921.jpg" for ::1 at 2016-02-04 14:51:18 -0800
+
+
+Started GET "/assets/copyright-3915c0d7f0f648aea3c009d9eadc46543f930c5acf3e16e62457d625ac5ff100.png" for ::1 at 2016-02-04 14:51:18 -0800
+
+
+Started GET "/walkscore?address=8227+8th+Ave+NE%2C+Seattle%2C+WA%2C+United+States&lat=47.68880009999997&lng=-122.32031380000001" for ::1 at 2016-02-04 14:51:25 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8227 8th Ave NE, Seattle, WA, United States", "lat"=>"47.68880009999997", "lng"=>"-122.32031380000001"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 161ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/house?street=8217+8th+Ave+NE&city=Seattle&state=WA" for ::1 at 2016-02-04 14:51:25 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8217 8th Ave NE", "city"=>"Seattle", "state"=>"WA"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 143ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:29 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fh1NoJesrSDaUe86j+W8W0kv/srhy8cVVnf4bx6Yc0s8uQw/qstpN/czSynRM3pveqGxb+9WPiqDxQug8YuOcQ==", "bid"=>{"price"=>"46", "house_id"=>""}, "house"=>{"zillow_id"=>"48832700", "address"=>"8217 8th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1[0m  [["zillow_id", 48832700]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mHouse Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "houses" WHERE "houses"."zillow_id" = 48832700 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("zillow_id", "address", "city", "state", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["zillow_id", 48832700], ["address", "8217 8th Ave NE"], ["city", "Seattle"], ["state", "WA"], ["zip", 98115], ["created_at", "2016-02-04 22:51:29.675132"], ["updated_at", "2016-02-04 22:51:29.675132"]]
+  [1m[36m (5.6ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 6.7ms)
+
+RuntimeError ():
+  app/controllers/bids_controller.rb:10:in `create'
+
+
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.2ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (68.7ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (51.1ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (102.6ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:32 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fh1NoJesrSDaUe86j+W8W0kv/srhy8cVVnf4bx6Yc0s8uQw/qstpN/czSynRM3pveqGxb+9WPiqDxQug8YuOcQ==", "bid"=>{"price"=>"46", "house_id"=>""}, "house"=>{"zillow_id"=>"48832700", "address"=>"8217 8th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1[0m  [["zillow_id", 48832700]]
+  [1m[35mBid Load (0.2ms)[0m  SELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1  [["house_id", 34]]
+  [1m[36m (0.3ms)[0m  [1mSELECT MAX("bids"."price") FROM "bids" WHERE "bids"."house_id" = $1[0m  [["house_id", 34]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "bids" ("price", "user_id", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["price", 46], ["user_id", 5], ["house_id", 34], ["created_at", "2016-02-04 22:51:32.713776"], ["updated_at", "2016-02-04 22:51:32.713776"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "bids_count" = COALESCE("bids_count", 0) + 1 WHERE "users"."id" = $1  [["id", 5]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 34]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "houses" SET "bids_count" = COALESCE("bids_count", 0) + 1 WHERE "houses"."id" = $1  [["id", 34]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "bids" WHERE "bids"."house_id" = $1  [["house_id", 34]]
+Completed 0  in 15ms (Views: 0.2ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:33 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fh1NoJesrSDaUe86j+W8W0kv/srhy8cVVnf4bx6Yc0s8uQw/qstpN/czSynRM3pveqGxb+9WPiqDxQug8YuOcQ==", "bid"=>{"price"=>"46", "house_id"=>""}, "house"=>{"zillow_id"=>"48832700", "address"=>"8217 8th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48832700]]
+  [1m[36mBid Load (0.5ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 34]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:33 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fh1NoJesrSDaUe86j+W8W0kv/srhy8cVVnf4bx6Yc0s8uQw/qstpN/czSynRM3pveqGxb+9WPiqDxQug8YuOcQ==", "bid"=>{"price"=>"46", "house_id"=>""}, "house"=>{"zillow_id"=>"48832700", "address"=>"8217 8th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48832700]]
+  [1m[36mBid Load (0.2ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 34]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:51:35 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fh1NoJesrSDaUe86j+W8W0kv/srhy8cVVnf4bx6Yc0s8uQw/qstpN/czSynRM3pveqGxb+9WPiqDxQug8YuOcQ==", "bid"=>{"price"=>"46", "house_id"=>""}, "house"=>{"zillow_id"=>"48832700", "address"=>"8217 8th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48832700]]
+  [1m[36mBid Load (0.2ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 34]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-02-04 14:52:08 -0800
+Processing by MapsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" LIMIT 1
+  Rendered maps/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 55ms (Views: 29.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/walkscore?address=8227+8th+Ave+NE%2C+Seattle%2C+WA%2C+United+States&lat=47.68880019999997&lng=-122.32029510000001" for ::1 at 2016-02-04 14:52:14 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8227 8th Ave NE, Seattle, WA, United States", "lat"=>"47.68880019999997", "lng"=>"-122.32029510000001"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 116ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/house?street=8217+8th+Ave+NE&city=Seattle&state=WA" for ::1 at 2016-02-04 14:52:14 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8217 8th Ave NE", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 360ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 14:52:22 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jj3TPnbYQ6TRfc4UDWIwxiqylkN0ybMdfcnjyfDahWLMmZKhS7+Hs/wfagdTtPbyGTzZ5npUSiKoexAGH8l4WA==", "bid"=>{"price"=>"36", "house_id"=>""}, "house"=>{"zillow_id"=>"48832700", "address"=>"8217 8th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48832700]]
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.6ms)
+
+RuntimeError ():
+  app/controllers/bids_controller.rb:7:in `create'
+
+
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.2ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.9ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (72.8ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (64.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (125.9ms)
+
+
+Started GET "/" for ::1 at 2016-02-04 15:01:16 -0800
+Processing by MapsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (1.0ms)[0m  SELECT  "houses".* FROM "houses" LIMIT 1
+  Rendered maps/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 174ms (Views: 103.9ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-04 15:01:17 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-04 15:01:17 -0800
+
+
+Started GET "/assets/bid.self-de396db61b29563dfd2172f8659e6f8ca25f4674ad777cc1738901792d0a15fc.js?body=1" for ::1 at 2016-02-04 15:01:17 -0800
+
+
+Started GET "/assets/application.self-08881a283dda94346ff3fb51b899c14b7758130a697ce2394e9e472decff2a3a.css?body=1" for ::1 at 2016-02-04 15:01:17 -0800
+
+
+Started GET "/assets/logo-aad91b50f1622fc009e58740a2ebe1b8349004eca5350cf99ba98c16ee167921.jpg" for ::1 at 2016-02-04 15:01:17 -0800
+
+
+Started GET "/assets/maps.self-7644c19d07ad9e545bbed51e71e3276e5c18edf7ce60561e796e04ac4d5f06d1.js?body=1" for ::1 at 2016-02-04 15:01:17 -0800
+
+
+Started GET "/assets/maps_search.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-02-04 15:01:17 -0800
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-02-04 15:01:17 -0800
+
+
+Started GET "/assets/copyright-3915c0d7f0f648aea3c009d9eadc46543f930c5acf3e16e62457d625ac5ff100.png" for ::1 at 2016-02-04 15:01:17 -0800
+
+
+Started GET "/walkscore?address=8534+Latona+Ave+NE%2C+Seattle%2C+WA%2C+United+States&lat=47.691401&lng=-122.32531899999998" for ::1 at 2016-02-04 15:01:25 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8534 Latona Ave NE, Seattle, WA, United States", "lat"=>"47.691401", "lng"=>"-122.32531899999998"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 597ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/house?street=8534+Latona+Ave+NE&city=Seattle&state=WA" for ::1 at 2016-02-04 15:01:25 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8534 Latona Ave NE", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 572ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:01:35 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZzeNNHb6cDd0LaQ26QVXWl83N7mlKoAPsSBEAKQR7WUlk8yrS520IFlPACW305FubLl4HKu3eTBkkrfPSwIQXw==", "bid"=>{"price"=>"156", "house_id"=>""}, "house"=>{"zillow_id"=>"48982075", "address"=>"8534 Latona Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48982075]]
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.3ms)
+
+RuntimeError ():
+  app/controllers/bids_controller.rb:10:in `create'
+
+
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.1ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (62.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (52.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (121.4ms)
+
+
+Started GET "/" for ::1 at 2016-02-04 15:06:53 -0800
+Processing by MapsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.5ms)[0m  SELECT  "houses".* FROM "houses" LIMIT 1
+  Rendered maps/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 199ms (Views: 127.1ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/application.self-08881a283dda94346ff3fb51b899c14b7758130a697ce2394e9e472decff2a3a.css?body=1" for ::1 at 2016-02-04 15:06:53 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-04 15:06:53 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-04 15:06:53 -0800
+
+
+Started GET "/assets/bid.self-de396db61b29563dfd2172f8659e6f8ca25f4674ad777cc1738901792d0a15fc.js?body=1" for ::1 at 2016-02-04 15:06:53 -0800
+
+
+Started GET "/assets/maps.self-7644c19d07ad9e545bbed51e71e3276e5c18edf7ce60561e796e04ac4d5f06d1.js?body=1" for ::1 at 2016-02-04 15:06:53 -0800
+
+
+Started GET "/assets/maps_search.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-02-04 15:06:53 -0800
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-02-04 15:06:53 -0800
+
+
+Started GET "/assets/logo-aad91b50f1622fc009e58740a2ebe1b8349004eca5350cf99ba98c16ee167921.jpg" for ::1 at 2016-02-04 15:06:53 -0800
+
+
+Started GET "/assets/copyright-3915c0d7f0f648aea3c009d9eadc46543f930c5acf3e16e62457d625ac5ff100.png" for ::1 at 2016-02-04 15:06:54 -0800
+
+
+Started GET "/walkscore?address=8225+Latona+Ave+NE%2C+Seattle%2C+WA%2C+United+States&lat=47.689370999999994&lng=-122.326055" for ::1 at 2016-02-04 15:07:00 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8225 Latona Ave NE, Seattle, WA, United States", "lat"=>"47.689370999999994", "lng"=>"-122.326055"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 562ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/house?street=8225+Latona+Ave+NE&city=Seattle&state=WA" for ::1 at 2016-02-04 15:07:00 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8225 Latona Ave NE", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 207ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:07:04 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"097ak8Tq3TomgzW+Dqydn8fvu7CkqhwVPaxUP9zdo1SRepsM+Y0ZLQvhka1Qelur9GH0Fao35SroHqfwM85ebg==", "bid"=>{"price"=>"14", "house_id"=>""}, "house"=>{"zillow_id"=>"48776557", "address"=>"8225 Latona Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48776557]]
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.8ms)
+
+RuntimeError ():
+  app/controllers/bids_controller.rb:7:in `create'
+
+
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.2ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.1ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (66.2ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (52.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (123.9ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:07:10 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"097ak8Tq3TomgzW+Dqydn8fvu7CkqhwVPaxUP9zdo1SRepsM+Y0ZLQvhka1Qelur9GH0Fao35SroHqfwM85ebg==", "bid"=>{"price"=>"14", "house_id"=>""}, "house"=>{"zillow_id"=>"48776557", "address"=>"8225 Latona Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48776557]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+RuntimeError ():
+  app/controllers/bids_controller.rb:7:in `create'
+
+
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.6ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (48.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (48.8ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (98.2ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:07:12 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"097ak8Tq3TomgzW+Dqydn8fvu7CkqhwVPaxUP9zdo1SRepsM+Y0ZLQvhka1Qelur9GH0Fao35SroHqfwM85ebg==", "bid"=>{"price"=>"14", "house_id"=>""}, "house"=>{"zillow_id"=>"48776557", "address"=>"8225 Latona Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48776557]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+RuntimeError ():
+  app/controllers/bids_controller.rb:7:in `create'
+
+
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.5ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (44.7ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (40.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/khambro/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (88.7ms)
+
+
+Started GET "/" for ::1 at 2016-02-04 15:07:45 -0800
+Processing by MapsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.4ms)[0m  SELECT  "houses".* FROM "houses" LIMIT 1
+  Rendered maps/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 91ms (Views: 69.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.self-08881a283dda94346ff3fb51b899c14b7758130a697ce2394e9e472decff2a3a.css?body=1" for ::1 at 2016-02-04 15:07:46 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-04 15:07:46 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-04 15:07:46 -0800
+
+
+Started GET "/assets/bid.self-de396db61b29563dfd2172f8659e6f8ca25f4674ad777cc1738901792d0a15fc.js?body=1" for ::1 at 2016-02-04 15:07:46 -0800
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-02-04 15:07:46 -0800
+
+
+Started GET "/assets/maps.self-7644c19d07ad9e545bbed51e71e3276e5c18edf7ce60561e796e04ac4d5f06d1.js?body=1" for ::1 at 2016-02-04 15:07:46 -0800
+
+
+Started GET "/assets/maps_search.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-02-04 15:07:46 -0800
+
+
+Started GET "/assets/logo-aad91b50f1622fc009e58740a2ebe1b8349004eca5350cf99ba98c16ee167921.jpg" for ::1 at 2016-02-04 15:07:46 -0800
+
+
+Started GET "/assets/copyright-3915c0d7f0f648aea3c009d9eadc46543f930c5acf3e16e62457d625ac5ff100.png" for ::1 at 2016-02-04 15:07:46 -0800
+
+
+Started GET "/walkscore?address=8225+Latona+Ave+NE%2C+Seattle%2C+WA%2C+United+States&lat=47.689370999999994&lng=-122.326055" for ::1 at 2016-02-04 15:07:51 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8225 Latona Ave NE, Seattle, WA, United States", "lat"=>"47.689370999999994", "lng"=>"-122.326055"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 111ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/house?street=8225+Latona+Ave+NE&city=Seattle&state=WA" for ::1 at 2016-02-04 15:07:52 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8225 Latona Ave NE", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 150ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:07:57 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RwWY/2V9VesEc0tTzim//RQRd/Pr3cqoveJQF5zM5G0FodlgWBqR/CkR70CQ/3nJJ584VuVAM5doUKPYc98ZVw==", "bid"=>{"price"=>"14", "house_id"=>""}, "house"=>{"zillow_id"=>"48776557", "address"=>"8225 Latona Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48776557]]
+  [1m[36mBid Load (0.4ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/walkscore?address=8376+31st+Avenue+Northwest%2C+Seattle%2C+WA%2C+United+States&lat=47.689950199999984&lng=-122.3965551" for ::1 at 2016-02-04 15:08:06 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8376 31st Avenue Northwest, Seattle, WA, United States", "lat"=>"47.689950199999984", "lng"=>"-122.3965551"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 289ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/house?street=8376+31st+Ave+NW&city=Seattle&state=WA" for ::1 at 2016-02-04 15:08:06 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8376 31st Ave NW", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 150ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-02-04 15:08:15 -0800
+Processing by MapsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" LIMIT 1
+  Rendered maps/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 79ms (Views: 76.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-08881a283dda94346ff3fb51b899c14b7758130a697ce2394e9e472decff2a3a.css?body=1" for ::1 at 2016-02-04 15:08:15 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-04 15:08:15 -0800
+
+
+Started GET "/assets/maps.self-7644c19d07ad9e545bbed51e71e3276e5c18edf7ce60561e796e04ac4d5f06d1.js?body=1" for ::1 at 2016-02-04 15:08:15 -0800
+
+
+Started GET "/assets/maps_search.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-02-04 15:08:15 -0800
+
+
+Started GET "/assets/bid.self-de396db61b29563dfd2172f8659e6f8ca25f4674ad777cc1738901792d0a15fc.js?body=1" for ::1 at 2016-02-04 15:08:15 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-04 15:08:15 -0800
+
+
+Started GET "/assets/logo-aad91b50f1622fc009e58740a2ebe1b8349004eca5350cf99ba98c16ee167921.jpg" for ::1 at 2016-02-04 15:08:15 -0800
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-02-04 15:08:15 -0800
+
+
+Started GET "/assets/copyright-3915c0d7f0f648aea3c009d9eadc46543f930c5acf3e16e62457d625ac5ff100.png" for ::1 at 2016-02-04 15:08:15 -0800
+
+
+Started GET "/walkscore?address=8376+31st+Avenue+Northwest%2C+Seattle%2C+WA%2C+United+States&lat=47.689950199999984&lng=-122.3965551" for ::1 at 2016-02-04 15:08:22 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8376 31st Avenue Northwest, Seattle, WA, United States", "lat"=>"47.689950199999984", "lng"=>"-122.3965551"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 120ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/house?street=8376+31st+Ave+NW&city=Seattle&state=WA" for ::1 at 2016-02-04 15:08:22 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8376 31st Ave NW", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 340ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:08:25 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hDpC67HkxXLQ0BOOK8I8uDe6+apTzRpn7nL9ztn9EFvGngN0jIMBZf2yt511FPqMBDS2D11Q41g7wA4BNu7tYQ==", "bid"=>{"price"=>"56", "house_id"=>""}, "house"=>{"zillow_id"=>"48939891", "address"=>"8376 31st Ave NW", "city"=>"Seattle", "state"=>"WA", "zip"=>"98117"}}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48939891]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mHouse Exists (0.3ms)[0m  SELECT  1 AS one FROM "houses" WHERE "houses"."zillow_id" = 48939891 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "houses" ("zillow_id", "address", "city", "state", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["zillow_id", 48939891], ["address", "8376 31st Ave NW"], ["city", "Seattle"], ["state", "WA"], ["zip", 98117], ["created_at", "2016-02-04 23:08:25.864750"], ["updated_at", "2016-02-04 23:08:25.864750"]]
+  [1m[35m (5.5ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mSELECT MAX("bids"."price") FROM "bids" WHERE "bids"."house_id" = $1[0m  [["house_id", 35]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "bids" ("price", "user_id", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["price", 56], ["user_id", 5], ["house_id", 35], ["created_at", "2016-02-04 23:08:25.875546"], ["updated_at", "2016-02-04 23:08:25.875546"]]
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "bids_count" = COALESCE("bids_count", 0) + 1 WHERE "users"."id" = $1  [["id", 5]]
+  [1m[36mHouse Load (0.3ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 35]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "houses" SET "bids_count" = COALESCE("bids_count", 0) + 1 WHERE "houses"."id" = $1  [["id", 35]]
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "bids" WHERE "bids"."house_id" = $1  [["house_id", 35]]
+Completed 200 OK in 33ms (Views: 0.3ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/" for ::1 at 2016-02-04 15:08:34 -0800
+Processing by MapsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" LIMIT 1
+  Rendered maps/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 53ms (Views: 51.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-04 15:08:34 -0800
+
+
+Started GET "/assets/maps_search.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-02-04 15:08:34 -0800
+
+
+Started GET "/assets/bid.self-de396db61b29563dfd2172f8659e6f8ca25f4674ad777cc1738901792d0a15fc.js?body=1" for ::1 at 2016-02-04 15:08:34 -0800
+
+
+Started GET "/assets/maps.self-7644c19d07ad9e545bbed51e71e3276e5c18edf7ce60561e796e04ac4d5f06d1.js?body=1" for ::1 at 2016-02-04 15:08:34 -0800
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-02-04 15:08:34 -0800
+
+
+Started GET "/assets/application.self-08881a283dda94346ff3fb51b899c14b7758130a697ce2394e9e472decff2a3a.css?body=1" for ::1 at 2016-02-04 15:08:34 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-04 15:08:34 -0800
+
+
+Started GET "/assets/logo-aad91b50f1622fc009e58740a2ebe1b8349004eca5350cf99ba98c16ee167921.jpg" for ::1 at 2016-02-04 15:08:34 -0800
+
+
+Started GET "/assets/copyright-3915c0d7f0f648aea3c009d9eadc46543f930c5acf3e16e62457d625ac5ff100.png" for ::1 at 2016-02-04 15:08:34 -0800
+
+
+Started GET "/walkscore?address=8376+31st+Avenue+Northwest%2C+Seattle%2C+WA%2C+United+States&lat=47.689950199999984&lng=-122.3965551" for ::1 at 2016-02-04 15:08:39 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8376 31st Avenue Northwest, Seattle, WA, United States", "lat"=>"47.689950199999984", "lng"=>"-122.3965551"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 171ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/house?street=8376+31st+Ave+NW&city=Seattle&state=WA" for ::1 at 2016-02-04 15:08:39 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8376 31st Ave NW", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 138ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:08:43 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2j1zh3SqSbGON9cGydlt7MXBoClF4mwsnPtl5cmal8GYmTIYSc2NpqNVcxWXD6vY9k/vjEt/lRNJSZYqJolq+w==", "bid"=>{"price"=>"78", "house_id"=>""}, "house"=>{"zillow_id"=>"48939891", "address"=>"8376 31st Ave NW", "city"=>"Seattle", "state"=>"WA", "zip"=>"98117"}}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48939891]]
+  [1m[36mBid Load (1.8ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 35]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2016-02-04 15:11:40 -0800
+Processing by MapsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" LIMIT 1
+  Rendered maps/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 2252ms (Views: 2205.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-04 15:11:42 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-04 15:11:42 -0800
+
+
+Started GET "/assets/maps_search.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-02-04 15:11:43 -0800
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-02-04 15:11:43 -0800
+
+
+Started GET "/assets/bid.self-de396db61b29563dfd2172f8659e6f8ca25f4674ad777cc1738901792d0a15fc.js?body=1" for ::1 at 2016-02-04 15:11:43 -0800
+
+
+Started GET "/assets/logo-aad91b50f1622fc009e58740a2ebe1b8349004eca5350cf99ba98c16ee167921.jpg" for ::1 at 2016-02-04 15:11:43 -0800
+
+
+Started GET "/assets/maps.self-12d5525ac5a729f0f06e5e122baa37678c33a529c6a832843d2e6dd33f58fe77.js?body=1" for ::1 at 2016-02-04 15:11:43 -0800
+
+
+Started GET "/assets/application.self-45b382e21b2d69eb4c9938b505acec990cc16bbde7018939463a86185196568a.css?body=1" for ::1 at 2016-02-04 15:11:43 -0800
+
+
+Started GET "/assets/copyright-3915c0d7f0f648aea3c009d9eadc46543f930c5acf3e16e62457d625ac5ff100.png" for ::1 at 2016-02-04 15:11:43 -0800
+
+
+Started GET "/" for ::1 at 2016-02-04 15:11:54 -0800
+Processing by MapsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" LIMIT 1
+  Rendered maps/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1086ms (Views: 1083.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-be5ac8092f7e9b2cd2898a00695804194b41962a883b8fc167f0e0829b9fe48c.css?body=1" for ::1 at 2016-02-04 15:11:55 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-04 15:11:55 -0800
+
+
+Started GET "/assets/maps.self-12d5525ac5a729f0f06e5e122baa37678c33a529c6a832843d2e6dd33f58fe77.js?body=1" for ::1 at 2016-02-04 15:11:55 -0800
+
+
+Started GET "/assets/bid.self-de396db61b29563dfd2172f8659e6f8ca25f4674ad777cc1738901792d0a15fc.js?body=1" for ::1 at 2016-02-04 15:11:55 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-04 15:11:55 -0800
+
+
+Started GET "/assets/maps_search.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-02-04 15:11:55 -0800
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-02-04 15:11:55 -0800
+
+
+Started GET "/assets/logo-aad91b50f1622fc009e58740a2ebe1b8349004eca5350cf99ba98c16ee167921.jpg" for ::1 at 2016-02-04 15:11:55 -0800
+
+
+Started GET "/assets/copyright-3915c0d7f0f648aea3c009d9eadc46543f930c5acf3e16e62457d625ac5ff100.png" for ::1 at 2016-02-04 15:11:55 -0800
+
+
+Started GET "/walkscore?address=8256+40th+Avenue+Northeast%2C+Seattle%2C+WA%2C+United+States&lat=47.69003200000001&lng=-122.28503699999999" for ::1 at 2016-02-04 15:12:04 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8256 40th Avenue Northeast, Seattle, WA, United States", "lat"=>"47.69003200000001", "lng"=>"-122.28503699999999"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 200ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/house?street=8256+40th+Ave+NE&city=Seattle&state=WA" for ::1 at 2016-02-04 15:12:04 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8256 40th Ave NE", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 1835ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:12:14 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NuXdgszrkxx63PGyyPgC0gEkF/9+xe9bVGipMcUkAvJ0QZwd8YxXC1e+VaGWLsTmMqpYWnBYFmSB2lr+Kjf/yA==", "bid"=>{"price"=>"46", "house_id"=>""}, "house"=>{"zillow_id"=>"48672048", "address"=>"8256 40th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48672048]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mHouse Exists (0.3ms)[0m  SELECT  1 AS one FROM "houses" WHERE "houses"."zillow_id" = 48672048 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "houses" ("zillow_id", "address", "city", "state", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["zillow_id", 48672048], ["address", "8256 40th Ave NE"], ["city", "Seattle"], ["state", "WA"], ["zip", 98115], ["created_at", "2016-02-04 23:12:14.362965"], ["updated_at", "2016-02-04 23:12:14.362965"]]
+  [1m[35m (5.7ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mSELECT MAX("bids"."price") FROM "bids" WHERE "bids"."house_id" = $1[0m  [["house_id", 36]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "bids" ("price", "user_id", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["price", 46], ["user_id", 5], ["house_id", 36], ["created_at", "2016-02-04 23:12:14.377383"], ["updated_at", "2016-02-04 23:12:14.377383"]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "bids_count" = COALESCE("bids_count", 0) + 1 WHERE "users"."id" = $1  [["id", 5]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 36]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "houses" SET "bids_count" = COALESCE("bids_count", 0) + 1 WHERE "houses"."id" = $1  [["id", 36]]
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "bids" WHERE "bids"."house_id" = $1  [["house_id", 36]]
+Completed 200 OK in 49ms (Views: 0.3ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/" for ::1 at 2016-02-04 15:12:22 -0800
+Processing by MapsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.4ms)[0m  SELECT  "houses".* FROM "houses" LIMIT 1
+  Rendered maps/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 36ms (Views: 32.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-04 15:12:23 -0800
+
+
+Started GET "/assets/application.self-be5ac8092f7e9b2cd2898a00695804194b41962a883b8fc167f0e0829b9fe48c.css?body=1" for ::1 at 2016-02-04 15:12:23 -0800
+
+
+Started GET "/assets/bid.self-de396db61b29563dfd2172f8659e6f8ca25f4674ad777cc1738901792d0a15fc.js?body=1" for ::1 at 2016-02-04 15:12:23 -0800
+
+
+Started GET "/assets/maps_search.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-02-04 15:12:23 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-04 15:12:23 -0800
+
+
+Started GET "/assets/maps.self-12d5525ac5a729f0f06e5e122baa37678c33a529c6a832843d2e6dd33f58fe77.js?body=1" for ::1 at 2016-02-04 15:12:23 -0800
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-02-04 15:12:23 -0800
+
+
+Started GET "/assets/logo-aad91b50f1622fc009e58740a2ebe1b8349004eca5350cf99ba98c16ee167921.jpg" for ::1 at 2016-02-04 15:12:23 -0800
+
+
+Started GET "/assets/copyright-3915c0d7f0f648aea3c009d9eadc46543f930c5acf3e16e62457d625ac5ff100.png" for ::1 at 2016-02-04 15:12:23 -0800
+
+
+Started GET "/walkscore?address=8256+40th+Avenue+Northeast%2C+Seattle%2C+WA%2C+United+States&lat=47.69003200000001&lng=-122.28503699999999" for ::1 at 2016-02-04 15:12:30 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8256 40th Avenue Northeast, Seattle, WA, United States", "lat"=>"47.69003200000001", "lng"=>"-122.28503699999999"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 115ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/house?street=8256+40th+Ave+NE&city=Seattle&state=WA" for ::1 at 2016-02-04 15:12:30 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8256 40th Ave NE", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 150ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:12:31 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6N/itB2SRESpTiA/gA6S+xCOrbvhbv/FwsamH1J17syqe6MrIPWAU4QshCze2FTPIwDiHu/zBvoXdFXQvWYT9g==", "bid"=>{"price"=>"", "house_id"=>""}, "house"=>{"zillow_id"=>"48672048", "address"=>"8256 40th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48672048]]
+  [1m[36mBid Load (0.3ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 36]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:12:35 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6N/itB2SRESpTiA/gA6S+xCOrbvhbv/FwsamH1J17syqe6MrIPWAU4QshCze2FTPIwDiHu/zBvoXdFXQvWYT9g==", "bid"=>{"price"=>"", "house_id"=>""}, "house"=>{"zillow_id"=>"48672048", "address"=>"8256 40th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48672048]]
+  [1m[36mBid Load (0.2ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 36]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:12:36 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6N/itB2SRESpTiA/gA6S+xCOrbvhbv/FwsamH1J17syqe6MrIPWAU4QshCze2FTPIwDiHu/zBvoXdFXQvWYT9g==", "bid"=>{"price"=>"", "house_id"=>""}, "house"=>{"zillow_id"=>"48672048", "address"=>"8256 40th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48672048]]
+  [1m[36mBid Load (0.2ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 36]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:12:36 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6N/itB2SRESpTiA/gA6S+xCOrbvhbv/FwsamH1J17syqe6MrIPWAU4QshCze2FTPIwDiHu/zBvoXdFXQvWYT9g==", "bid"=>{"price"=>"", "house_id"=>""}, "house"=>{"zillow_id"=>"48672048", "address"=>"8256 40th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48672048]]
+  [1m[36mBid Load (0.2ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 36]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:12:37 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6N/itB2SRESpTiA/gA6S+xCOrbvhbv/FwsamH1J17syqe6MrIPWAU4QshCze2FTPIwDiHu/zBvoXdFXQvWYT9g==", "bid"=>{"price"=>"", "house_id"=>""}, "house"=>{"zillow_id"=>"48672048", "address"=>"8256 40th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48672048]]
+  [1m[36mBid Load (0.3ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 36]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:12:37 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6N/itB2SRESpTiA/gA6S+xCOrbvhbv/FwsamH1J17syqe6MrIPWAU4QshCze2FTPIwDiHu/zBvoXdFXQvWYT9g==", "bid"=>{"price"=>"", "house_id"=>""}, "house"=>{"zillow_id"=>"48672048", "address"=>"8256 40th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48672048]]
+  [1m[36mBid Load (0.2ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 36]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:12:37 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6N/itB2SRESpTiA/gA6S+xCOrbvhbv/FwsamH1J17syqe6MrIPWAU4QshCze2FTPIwDiHu/zBvoXdFXQvWYT9g==", "bid"=>{"price"=>"", "house_id"=>""}, "house"=>{"zillow_id"=>"48672048", "address"=>"8256 40th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48672048]]
+  [1m[36mBid Load (0.2ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 36]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-04 15:12:38 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6N/itB2SRESpTiA/gA6S+xCOrbvhbv/FwsamH1J17syqe6MrIPWAU4QshCze2FTPIwDiHu/zBvoXdFXQvWYT9g==", "bid"=>{"price"=>"", "house_id"=>""}, "house"=>{"zillow_id"=>"48672048", "address"=>"8256 40th Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48672048]]
+  [1m[36mBid Load (0.2ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 36]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-02-04 15:13:19 -0800
+Processing by MapsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.7ms)[0m  SELECT  "houses".* FROM "houses" LIMIT 1
+  Rendered maps/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 89ms (Views: 64.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/application.self-be5ac8092f7e9b2cd2898a00695804194b41962a883b8fc167f0e0829b9fe48c.css?body=1" for ::1 at 2016-02-04 15:13:19 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-04 15:13:19 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-04 15:13:19 -0800
+
+
+Started GET "/assets/maps.self-12d5525ac5a729f0f06e5e122baa37678c33a529c6a832843d2e6dd33f58fe77.js?body=1" for ::1 at 2016-02-04 15:13:19 -0800
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-02-04 15:13:19 -0800
+
+
+Started GET "/assets/bid.self-de396db61b29563dfd2172f8659e6f8ca25f4674ad777cc1738901792d0a15fc.js?body=1" for ::1 at 2016-02-04 15:13:19 -0800
+
+
+Started GET "/assets/maps_search.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-02-04 15:13:19 -0800
+
+
+Started GET "/assets/logo-aad91b50f1622fc009e58740a2ebe1b8349004eca5350cf99ba98c16ee167921.jpg" for ::1 at 2016-02-04 15:13:19 -0800
+
+
+Started GET "/assets/copyright-3915c0d7f0f648aea3c009d9eadc46543f930c5acf3e16e62457d625ac5ff100.png" for ::1 at 2016-02-04 15:13:19 -0800
