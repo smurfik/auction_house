@@ -8,6 +8,20 @@ navigator.geolocation.getCurrentPosition(function(position){
 
 function initialize() {
 
+  var bidaddress, bidmarker;
+  var pinsgeocoder = new google.maps.Geocoder();
+  $.get("/place-pins", function(data) {
+    for (i = 0; i < data.length; i++) {
+      bidaddress = data[i].address+data[i].city+data[i].state;
+      pinsgeocoder.geocode({address: bidaddress}, function(data){
+        bidmarker = new google.maps.Marker({
+          position: data[0].geometry.location,
+          map: map
+        });
+      });
+    };
+  });
+
   var markers = [];
   map = new google.maps.Map(document.getElementById('map-canvas'), {
     mapTypeId: google.maps.MapTypeId.ROADMAP
