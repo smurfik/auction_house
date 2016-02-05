@@ -19,7 +19,7 @@ function initialize() {
           map: map
         });
       });
-    };
+    }
   });
 
   var markers = [];
@@ -115,7 +115,7 @@ function initialize() {
         }
        }
 
-       var street = street_number + " " + street_name
+       var street = street_number + " " + street_name;
       $.get("/house", {
         street: street,
         city: city,
@@ -140,6 +140,7 @@ function initialize() {
         $(".neighborhood").html(data.neighborhood);
         if (!data.images) {
           $(".image").attr("src", "http://www.croestate.com/assets/images/no_photo.png");
+          $(".zillow-pictures").removeClass("zillow-pictures");
         } else if (parseInt(data.images.count) > 1) {
             $(".zillow-pictures").html("");
             $(".image").attr("src", data.images.image.url[0]);
@@ -171,7 +172,21 @@ function initialize() {
         } else {
           $(".sold-price").html("NA");
         }
+        // 2nd argument is sending the params.  the key 'zpid:' in this scenario must match the params in the bid_data method (HousesController)
+        $.get("/bid-data", {zpid: data.zpid}, function(data) {
+          if (data.length === 0) {
+            $(".zebra").html("");
+            $(".no-bids").prepend("<p> No bids have been placed on this home. Let's get this party started! </p>");
+          } else {
+              $(".bid-create-date").html("");
+              $(".bid-price").html("");
+              // Reverse ordering the bids
+              for (i = data.length - 1; i >= 0; i--) {
+                $(".zebra").append('<tr><td>' + prettyDate(data[i].created_at) + '</td><td> $' + data[i].price + '</td></tr>');
+              }
+            }
+          });
+        });
       });
     });
-  });
   }

@@ -77,23 +77,14 @@
     </div>
     <div class="bid-history">
       <h2 class="account-header">Last 10 bids</h2>
-      <% if @house.bids_count.nil? %>
-        <h3 class="account-header">No current bids on this house</h3>
-      <% else @house.bids_count > 1 %>
-        <% @house.bids.last(10).each do |bid| %>
-          <table class="zebra">
-            <colgroup span="2"></colgroup>
-            <tr>
-              <th>Date</th>
-              <th>Price</th>
-            </tr>
-            <tr>
-              <th><%= bid.created_at.strftime("%m/%d/%Y") %></th>
-              <th><%= bid.price %></th>
-            </tr>
-          </table>
-        <% end %>
-      <% end %>
+      <span class="no-bids"></span>
+        <table class="zebra">
+          <colgroup span="2"></colgroup>
+          <tr>
+            <th>Date</th>
+            <th>Price</th>
+          </tr>
+        </table>
     </div>
   </div>
 </div>

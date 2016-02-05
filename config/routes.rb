@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get "/walkscore", to: "houses#walkscore"
   get "/shutupseattle", to: "houses#shut_up_seattle"
   get "/place-pins", to: "houses#place_pins"
+  get "/bid-data", to: "houses#bid_data"
 
   post "/bid", to: "bids#create", as: :create_bid
   post "/bid/delete/:id", to: "bids#delete"
