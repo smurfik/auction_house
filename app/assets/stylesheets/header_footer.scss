@@ -4,11 +4,24 @@ body {
 
 #header {
   @include outer-container;
-  height: 100px;
 }
 
 .wrap {
   background-color: #E4EFF2;
+}
+
+#header button:hover {
+  background-color: tint($action-color, 40%);
+}
+
+#header button {
+  border: 1px solid tint($action-color, 60%);
+  text-shadow: 2px 1px tint($action-color, 60%);
+  border-radius: 0px;
+}
+
+#header .nav a:hover {
+  color: #fff;
 }
 
 #header ul {
@@ -18,28 +31,8 @@ body {
 #header li {
   display: inline-block;
   list-style: none;
-  float: right;
   font-size: 20px;
-}
-
-#header button {
-  padding: 39px 0px 39px 0px;
-  border: 1px solid tint($action-color, 60%);
-  text-shadow: 2px 1px tint($action-color, 60%);
-  border-radius: 0px;
-}
-
-#header .nav a {
-  padding: 39px;
-}
-
-#header .nav a:hover {
-  color: #fff;
-  padding: 39px;
-}
-
-#header button:hover {
-  background-color: tint($action-color, 40%);
+  float: right;
 }
 
 .site-footer img {
@@ -125,4 +118,51 @@ th, td {
 
 tbody tr:nth-child(odd) {
   background: #eee;
+}
+
+// header responsiveness
+@media (max-width: 608px) {
+
+  #header {
+    height: 70px;
+  }
+
+  #header button {
+    margin-top: 20px;
+    padding: 5px 2px;
+    margin-right: 7px;
+  }
+
+  #header .nav a {
+    padding: 0px;
+  }
+
+  #header .nav a:hover {
+    padding: 0px;
+  }
+
+  #header img {
+    @include span-columns(3);
+  }
+
+}
+
+@media (min-width: 608px) {
+
+  #header {
+    height: 100px;
+  }
+
+  #header button {
+    padding: 39px 0px 39px 0px;
+  }
+
+  #header .nav a {
+    padding: 39px;
+  }
+
+  #header .nav a:hover {
+    padding: 39px;
+  }
+
 }

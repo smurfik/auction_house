@@ -56998,3 +56998,96 @@ Processing by BidsController#create as */*
   [1m[36mBid Load (0.3ms)[0m  [1mSELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1[0m  [["house_id", 48]]
   [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
 Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-02-05 14:22:43 -0800
+Processing by MapsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.5ms)[0m  SELECT  "houses".* FROM "houses" LIMIT 1
+  Rendered maps/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 2519ms (Views: 2355.5ms | ActiveRecord: 85.4ms)
+
+
+Started GET "/assets/application.self-6ed6654e36318e32318811d544d8c0d2cb60816d1cdf9152060ede64554cb30c.css?body=1" for ::1 at 2016-02-05 14:22:46 -0800
+
+
+Started GET "/assets/maps.self-cbfbb2c90482147fe5e1edfbde9b2f6741cfd749a8af3a5aa3264b934f38c3b0.js?body=1" for ::1 at 2016-02-05 14:22:46 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-05 14:22:46 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-05 14:22:46 -0800
+
+
+Started GET "/assets/bid.self-9cb2ff8900ffcc78bc3f1576fe3b286e0e7981e87fc4080c5944f477dd9a3322.js?body=1" for ::1 at 2016-02-05 14:22:46 -0800
+
+
+Started GET "/assets/prettydate.self-9ff8af1ff7e4ee5e88524222e61b0a63803d0705feedf8be16be7b36df900d4a.js?body=1" for ::1 at 2016-02-05 14:22:46 -0800
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-02-05 14:22:46 -0800
+
+
+Started GET "/assets/maps_search.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-02-05 14:22:46 -0800
+
+
+Started GET "/assets/logo-aad91b50f1622fc009e58740a2ebe1b8349004eca5350cf99ba98c16ee167921.jpg" for ::1 at 2016-02-05 14:22:46 -0800
+
+
+Started GET "/place-pins" for ::1 at 2016-02-05 14:22:46 -0800
+Processing by HousesController#place_pins as */*
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT "houses".* FROM "houses" WHERE ("houses"."bids_count" != $1)  [["bids_count", 0]]
+Completed 200 OK in 8ms (Views: 2.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/copyright-3915c0d7f0f648aea3c009d9eadc46543f930c5acf3e16e62457d625ac5ff100.png" for ::1 at 2016-02-05 14:22:46 -0800
+
+
+Started GET "/" for ::1 at 2016-02-05 14:22:51 -0800
+Processing by MapsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" LIMIT 1
+  Rendered maps/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 43ms (Views: 40.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/place-pins" for ::1 at 2016-02-05 14:22:51 -0800
+Processing by HousesController#place_pins as */*
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.3ms)[0m  SELECT "houses".* FROM "houses" WHERE ("houses"."bids_count" != $1)  [["bids_count", 0]]
+Completed 200 OK in 7ms (Views: 3.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/walkscore?address=8225+Latona+Ave+NE%2C+Seattle%2C+WA%2C+United+States&lat=47.689370999999994&lng=-122.326055" for ::1 at 2016-02-05 14:22:55 -0800
+Processing by HousesController#walkscore as */*
+  Parameters: {"address"=>"8225 Latona Ave NE, Seattle, WA, United States", "lat"=>"47.689370999999994", "lng"=>"-122.326055"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 567ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/house?street=8225+Latona+Ave+NE&city=Seattle&state=WA" for ::1 at 2016-02-05 14:22:56 -0800
+Processing by HousesController#show as */*
+  Parameters: {"street"=>"8225 Latona Ave NE", "city"=>"Seattle", "state"=>"WA"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 183ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bid-data?zpid=48776557" for ::1 at 2016-02-05 14:22:56 -0800
+Processing by HousesController#bid_data as */*
+  Parameters: {"zpid"=>"48776557"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1  [["zillow_id", 48776557]]
+  [1m[36mBid Load (0.3ms)[0m  [1mSELECT "bids".* FROM "bids" WHERE "bids"."house_id" = $1[0m  [["house_id", 9]]
+Completed 200 OK in 35ms (Views: 11.0ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/bid" for ::1 at 2016-02-05 14:23:00 -0800
+Processing by BidsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QlK7lg13iLkNtxEiHfN1k4tKVrn5jADX3YUGcRIshTwA9voJMBBMriDVtTFDJbOnuMQZHPcR+egIN/W+/T94Bg==", "bid"=>{"price"=>"16", "house_id"=>""}, "house"=>{"zillow_id"=>"48776557", "address"=>"8225 Latona Ave NE", "city"=>"Seattle", "state"=>"WA", "zip"=>"98115"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."zillow_id" = $1 LIMIT 1[0m  [["zillow_id", 48776557]]
+  [1m[35mBid Load (0.7ms)[0m  SELECT  "bids".* FROM "bids" WHERE "bids"."house_id" = $1  ORDER BY "bids"."id" DESC LIMIT 1  [["house_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 1.2ms)

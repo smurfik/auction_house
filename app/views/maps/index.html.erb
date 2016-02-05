@@ -3,18 +3,18 @@
 </form>
 
 
-<div id="map-canvas">
+<div id="map-canvas" class="map-first-load">
 </div>
 
-<div class="sidebar">
+<div class="sidebar first-load">
   <div class="home-picture">
     <img class="image" >
   </div>
   <div class="address-row">
     <div class="address">
       <h2><span class="street"></span></h2>
-      <h3><span class="city"></span>,<span class="state"></span> <span class="zip"></span></h3>
-      <h4><span class="bedrooms"></span> bed <span class="bath"></span> bath <span class="sqft"></span> sqft</h4>
+      <h3><span class="city"></span>, <span class="state"></span> <span class="zip"></span></h3>
+      <h4><br><span class="bedrooms"></span> bed <span class="bath"></span> bath <span class="sqft"></span> sqft</h4>
     </div>
     <% if @current_user %>
       <div class = "toggle">
@@ -41,16 +41,16 @@
     <div class="property-details">
       <div class="sale">
         <h2>For Sale</h2>
-        <h3>Zestimate®: $<span class="zestimate"></span></h3>
-        <h4>Rent Zestimate: <span class="rent"></span></h4>
+        <h3>Zestimate®:</h3> $<span class="zestimate"></span>
+        <h4><br>Rent Zestimate:</h4> <span class="rent"></span>
       </div>
       <div class="facts">
         <ul>
-          <li>Walk Score: <span class="walk"></span></li>
-          <li>Lot: <span class="lotsqft"></span> sqft</li>
-          <li><span class="type"></span></li>
-          <li>Built: <span class="year"></span></li>
-          <li>Neighborhood:<span class="neighborhood"></span> </li>
+          <li><strong>Walk Score:</strong> <span class="walk"></span></li>
+          <li><strong>Lot:</strong> <span class="lotsqft"></span> sqft</li>
+          <li><strong>Type:</strong> <span class="type"></span></li>
+          <li><strong>Built:</strong> <span class="year"></span></li>
+          <li><strong>Neighborhood:</strong> <br><span class="neighborhood"></span> </li>
         </ul>
       </div>
     </div>
@@ -61,39 +61,28 @@
         <p class="auto-describe" style="display: none">
           This property is <span class="sqft"></span> sqft with a lot size of <span class="lotsqft"></span> sqft and was built in <span class="year"></span>. Located in the <span class="neighborhood"></span> neighborhood with a walk score of <span class="walk"></span>, it's most certainly a great place to live.
         </p>
-
-
       </div>
     </div>
     <div class="property-details">
       <div class="facts2">
         <ul>
-          <li>Date last sold: <span class="sold-date"></span> </li>
-          <li>Price last sold: $<span class="sold-price"></span></li>
+          <li><strong>Date last sold:</strong> <span class="sold-date"></span> </li>
+          <li><strong>Price last sold:</strong> $<span class="sold-price"></span></li>
         </ul>
       </div>
-      <!-- <div class="facts2">
-        <ul>
-          <h4>Features</h4>
-          <li>MLS #: 886049</li>
-          <li>Lot: 3,920 sqft</li>
-          <li>Single Family</li>
-          <li>2 Bedroom, 1.5 Bath</li>
-          <li>Built in 1916</li>
-          <li>Less than 1 day on Zillow</li>
-          <li>Price/sqft: $395</li>
-          <li>MLS #: 886049</li>
-        </ul>
-      </div> -->
     </div>
-    <div class="property-details">
-      <div class="facts2">
-        <img src="http://placekitten.com/g/400/301">
-        <img src="http://placekitten.com/g/400/301">
-        <img src="http://placekitten.com/g/400/301">
-        <img src="http://placekitten.com/g/400/301">
-      </div>
-
+    <div class="zillow-pictures">
+    </div>
+    <div class="bid-history">
+      <h2 class="account-header">Last 10 bids</h2>
+      <span class="no-bids"></span>
+        <table class="zebra">
+          <colgroup span="2"></colgroup>
+          <tr>
+            <th>Date</th>
+            <th>Price</th>
+          </tr>
+        </table>
     </div>
   </div>
 </div>

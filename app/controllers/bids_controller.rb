@@ -30,7 +30,9 @@ class BidsController < ApplicationController
   def delete
     @bid = Bid.find(params[:id])
     @bid.destroy
-    redirect_to user_account_path
+
+    redirect_to user_account_path, notice: "Your bid was deleted!"
+
   end
 
 end

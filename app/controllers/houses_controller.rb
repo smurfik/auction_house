@@ -2,7 +2,7 @@ class HousesController < ApplicationController
 
   def show
     @zillow = Zillow.find(params["street"], params["city"], params["state"])
-    render json: @zillow.to_json
+    render :json=> @zillow
   end
 
   def walkscore
@@ -18,6 +18,16 @@ class HousesController < ApplicationController
   def place_pins
     @houses = House.where.not(bids_count: 0)
     render json: @houses
+  end
+
+  def bid_data
+    house = House.find_by(zillow_id: params[:zpid])
+    @bid_data = if house.nil?
+      []
+    else
+      house.bids
+    end
+    render json: @bid_data
   end
 
 end

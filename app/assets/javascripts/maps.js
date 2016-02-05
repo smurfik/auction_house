@@ -6,20 +6,110 @@ navigator.geolocation.getCurrentPosition(function(position){
   map.setCenter({lat: lat, lng: lng});
   });
 
+var setMarkerPosition = function(d) {
+  this.setPosition(d[0].geometry.location);
+};
+
 function initialize() {
 
-  var bidaddress, bidmarker;
+  var bidaddress, bidmarker, bidstreet, bidcity, bidstate;
+  var bidmarkers = [];
   var pinsgeocoder = new google.maps.Geocoder();
   $.get("/place-pins", function(data) {
     for (i = 0; i < data.length; i++) {
       bidaddress = data[i].address+data[i].city+data[i].state;
-      pinsgeocoder.geocode({address: bidaddress}, function(data){
-        bidmarker = new google.maps.Marker({
-          position: data[0].geometry.location,
-          map: map
+      bidstreet = data[i].address;
+      bidcity = data[i].city;
+      bidstate = data[i].state;
+      bidmarker = new google.maps.Marker({
+        map: map
+      });
+
+      bidmarker.address = bidaddress;
+      bidmarker.street = bidstreet;
+      bidmarker.city = bidcity;
+      bidmarker.state = bidstate;
+
+      bidmarkers.push(bidmarker);
+
+      bidmarker.addListener('click', function() {
+        $.get("/house", {
+          street: this.street,
+          city: this.city,
+          state: this.state
+        }, function(data) {
+          $(".zpid").val(data.zpid);
+          $(".street").val(data.street);
+          $(".city").val(data.city);
+          $(".state").val(data.state);
+          $(".zip").val(data.zipcode);
+          $(".street").html(data.street);
+          $(".city").html(data.city);
+          $(".state").html(data.state);
+          $(".zip").html(data.zipcode);
+          $(".bath").html(data.bathrooms);
+          $(".bedrooms").html(data.bedrooms);
+          $(".type").html(data.type);
+          $(".zestimate").html(data.zestimate.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+          $(".year").html(data.yearBuilt);
+          $(".sqft").html(data.sqft.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+          $(".lotsqft").html(data.lotSizeSqFt.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+          $(".neighborhood").html(data.neighborhood);
+          if (!data.images) {
+            $(".image").attr("src", "http://www.croestate.com/assets/images/no_photo.png");
+            $(".zillow-pictures").html("");
+            $(".zillow-pictures").removeClass("zillow-pictures");
+          } else if (parseInt(data.images.count) > 1) {
+              $(".zillow-pictures").html("");
+              $(".image").attr("src", data.images.image.url[0]);
+              var z_images = data.images.image.url;
+              for (i = 0; i < z_images.length; i++) {
+                $(".zillow-pictures").prepend('<img src="' + z_images[i] + '" />');
+              }
+          } else {
+            $(".zillow-pictures").html("");
+            $(".image").attr("src", data.images.image.url);
+          }
+          if (data.description) {
+            $(".description").html(data.homeDescription);
+          } else {
+            $(".auto-describe").show();
+          }
+          if (data.rent) {
+            $(".rent").html(data.rent.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+          } else {
+            $(".rent").html("NA");
+          }
+          if (data.sold_date) {
+            $(".sold-date").html(data.sold_date);
+          } else {
+            $(".sold-date").html("NA");
+          }
+          if (data.sold_price) {
+            $(".sold-price").html(data.sold_price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+          } else {
+            $(".sold-price").html("NA");
+          }
+        });
+          $.get("/bid-data", {zpid: data.zpid}, function(data) {
+            if (data.length === 0) {
+              $(".zebra").html("");
+              $(".no-bids").html("");
+              $(".no-bids").prepend("<p> No bids have been placed on this home. Let's get this party started! </p>");
+            } else {
+                $(".bid-create-date").html("");
+                $(".bid-price").html("");
+                // Reverse ordering the bids
+                for (i = data.length - 1; i >= 0; i--) {
+                  $(".zebra").append('<tr><td>' + prettyDate(data[i].created_at) + '</td><td> $' + data[i].price + '</td></tr>');
+                }
+              }
         });
       });
-    };
+    }
+    for (i = 0; i < bidmarkers.length; i++) {
+      pinsgeocoder.geocode({address: bidmarkers[i].address}, setMarkerPosition.bind(bidmarkers[i]))
+    }
   });
 
   var markers = [];
@@ -82,6 +172,9 @@ function initialize() {
 
     map.fitBounds(bounds);
 
+    $(".sidebar.first-load").removeClass("first-load");
+    $("#map-canvas.map-first-load").removeClass("map-first-load");
+
     $.get("/walkscore", {
       address: input.value,
       lat: map.getCenter().lat(),
@@ -91,7 +184,6 @@ function initialize() {
     });
 
     geocoder.geocode({location: map.getCenter()}, function(location){
-      // console.log(location[0]);
 
         $(".notice").html(" ");
         $('.form').hide();
@@ -119,8 +211,8 @@ function initialize() {
         }
        }
 
-       var street = street_number + " " + street_name
 
+       var street = street_number + " " + street_name;
 
       $.get("/house", {
         street: street,
@@ -139,20 +231,33 @@ function initialize() {
         $(".bath").html(data.bathrooms);
         $(".bedrooms").html(data.bedrooms);
         $(".type").html(data.type);
-        $(".zestimate").html(data.zestimate);
-
+        $(".zestimate").html(data.zestimate.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
         $(".year").html(data.yearBuilt);
-        $(".sqft").html(data.sqft);
-        $(".lotsqft").html(data.lotSizeSqFt);
+        $(".sqft").html(data.sqft.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+        $(".lotsqft").html(data.lotSizeSqFt.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
         $(".neighborhood").html(data.neighborhood);
-        $(".image").attr("src", data.edited_facts.images.image.url);
+        if (!data.images) {
+          $(".image").attr("src", "http://www.croestate.com/assets/images/no_photo.png");
+          $(".zillow-pictures").html("");
+          $(".zillow-pictures").removeClass("zillow-pictures");
+        } else if (parseInt(data.images.count) > 1) {
+            $(".zillow-pictures").html("");
+            $(".image").attr("src", data.images.image.url[0]);
+            var z_images = data.images.image.url;
+            for (i = 0; i < z_images.length; i++) {
+              $(".zillow-pictures").prepend('<img src="' + z_images[i] + '" />');
+            }
+        } else {
+          $(".zillow-pictures").html("");
+          $(".image").attr("src", data.images.image.url);
+        }
         if (data.description) {
-          $(".description").html(data.description);
+          $(".description").html(data.homeDescription);
         } else {
           $(".auto-describe").show();
         }
         if (data.rent) {
-          $(".rent").html(data.rent);
+          $(".rent").html(data.rent.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
         } else {
           $(".rent").html("NA");
         }
@@ -162,23 +267,33 @@ function initialize() {
           $(".sold-date").html("NA");
         }
         if (data.sold_price) {
-          $(".sold-price").html(data.sold_price);
+          $(".sold-price").html(data.sold_price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
         } else {
           $(".sold-price").html("NA");
         }
-      });
-
-      $(".form").on("submit", function(e){
-        e.preventDefault();
-        var details = $(".form").serialize();
-        $.post("/bid", details, function(data) {
-          $(".notice").html(data.notice);
+        // 2nd argument is sending the params.  the key 'zpid:' in this scenario must match the params in the bid_data method (HousesController)
+        $.get("/bid-data", {zpid: data.zpid}, function(data) {
+          if (data.length === 0) {
+            $(".zebra").html("");
+            $(".no-bids").html("");
+            $(".no-bids").prepend("<p> No bids have been placed on this home. Let's get this party started! </p>");
+          } else {
+              $(".bid-create-date").html("");
+              $(".bid-price").html("");
+              // Reverse ordering the bids
+              for (i = data.length - 1; i >= 0; i--) {
+                $(".zebra").append('<tr><td>' + prettyDate(data[i].created_at) + '</td><td> $' + data[i].price + '</td></tr>');
+              }
+            }
+          });
         });
-
       });
-
-
-      })
-   })
-
-}
+    });
+    $(".form").on("submit", function(e){
+      e.preventDefault();
+      var details = $(".form").serialize();
+      $.post("/bid", details, function(data) {
+        $(".notice").html(data.notice);
+      });
+    });
+  }
