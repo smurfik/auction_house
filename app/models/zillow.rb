@@ -1,5 +1,3 @@
-require 'open-uri'
-
 class Zillow
   attr_accessor :street, :zpid, :city, :state, :zipcode, :bedrooms, :bathrooms,
   :yearBuilt, :lotSizeSqFt, :type, :neighborhood, :images, :zestimate, :edited_facts, :last_sold, :description, :rent, :sold_price, :sold_date
@@ -28,10 +26,6 @@ class Zillow
     end
   end
 
-  # def self.search
-  #   @address = URI.encode(params[:address])
-  # end
-
 
   def self.find(address, city, state)
     response = HTTParty.get("http://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz19vnw1f09vv_82rpe&address=#{address}&citystatezip=#{city},#{state}")
@@ -43,7 +37,5 @@ class Zillow
     zillow.description  = zillow_api["updatedPropertyDetails"]["response"]["homeDescription"]
     zillow
   end
-
-url = "http://www.zillow.com/webservice/GetDeepComps.htm?zws-id=X1-ZWz19vnw1f09vv_82rpe&zpid=48749425&count=5"
 
 end
