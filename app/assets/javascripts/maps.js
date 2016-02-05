@@ -185,6 +185,13 @@ function initialize() {
 
     geocoder.geocode({location: map.getCenter()}, function(location){
 
+        $(".notice").html(" ");
+        $('.form').hide();
+        $(".bid-now-button").show();
+        $('.bid-form').removeClass("styled");
+        $('.bid-now-button').removeClass("styled-bid-button");
+
+
         var place = location[0];
         var street_number;
         var street_name;
@@ -204,7 +211,9 @@ function initialize() {
         }
        }
 
+
        var street = street_number + " " + street_name;
+
       $.get("/house", {
         street: street,
         city: city,
