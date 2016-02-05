@@ -1,5 +1,3 @@
-require 'open-uri'
-
 class Zillow
   attr_accessor :street, :zpid, :city, :state, :zipcode, :bedrooms, :bathrooms,
   :yearBuilt, :lotSizeSqFt, :type, :neighborhood, :images, :zestimate, :edited_facts, :last_sold, :description, :rent, :sold_price, :sold_date
@@ -27,10 +25,6 @@ class Zillow
       @sold_date    = attrs["searchresults"]["response"]["results"]["result"]["lastSoldDate"]
     end
   end
-
-  # def self.search
-  #   @address = URI.encode(params[:address])
-  # end
 
 
   def self.find(address, city, state)
