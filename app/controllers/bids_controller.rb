@@ -3,7 +3,7 @@ class BidsController < ApplicationController
   def create
     @bid = @current_user.bids.new(params.require(:bid).permit(:price, :house_id))
     @house = House.find_by(zillow_id: params[:house][:zillow_id])
-    if @house != nil
+    if @house
       @old_bid = @house.bids.last
     else
       @house = House.create(params.require(:house).permit(:zillow_id, :address, :city, :state, :zip))
