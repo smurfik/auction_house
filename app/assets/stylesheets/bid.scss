@@ -2,6 +2,10 @@
   display: none;
 }
 
+.form {
+  display: none;
+}
+
 .styled {
   @include span-columns(8);
   clear: both;
@@ -13,4 +17,5 @@
 
 .styled-bid-button {
   margin-top: 48px;
+
 }

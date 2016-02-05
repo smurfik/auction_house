@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get "/new-user", to: "users#new", as: :new_user
   post "/new-user", to: "users#create"
-  get "/account",   to: "users#account", as: :user_account_path
+  get "/account",   to: "users#account", as: :user_account
 
 
   get "/sign-out", to: "sessions#sign_out", as: :sign_out
@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   get "/place-pins", to: "houses#place_pins"
 
   post "/bid", to: "bids#create", as: :create_bid
-  post "/bid/delete/:id", to: "bids#delete"
+  delete "/bid/delete/:id", to: "bids#delete"
 
 end

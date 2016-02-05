@@ -1,12 +1,16 @@
 $(document).ready(function() {
 
-  $('.form .bid-now-button').click(function(e) {
+  $(".bid-now-button").click(function(e) {
     e.preventDefault();
-    $('.bid-form').addClass("styled");
-    $('.bid-now-button').addClass("styled-bid-button");
+      $('.form').show();
+      $(".bid-now-button").hide();
+      $('.submit-bid-button').addClass("styled-bid-button");
+      $('.bid-form').addClass("styled");
 
-    $(this).unbind();
+    // $(this).unbind();
+
   });
+
 
   $('.text .bid-now-button').click(function(e) {
     e.preventDefault();
