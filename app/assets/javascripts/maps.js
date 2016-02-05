@@ -33,6 +33,8 @@ function initialize() {
       bidmarkers.push(bidmarker);
 
       bidmarker.addListener('click', function() {
+        $(".sidebar.first-load").removeClass("first-load");
+        $("#map-canvas.map-first-load").removeClass("map-first-load");
         $.get("/house", {
           street: this.street,
           city: this.city,
@@ -90,13 +92,13 @@ function initialize() {
           } else {
             $(".sold-price").html("NA");
           }
-        });
           $.get("/bid-data", {zpid: data.zpid}, function(data) {
             if (data.length === 0) {
               $(".zebra").html("");
               $(".no-bids").html("");
               $(".no-bids").prepend("<p> No bids have been placed on this home. Let's get this party started! </p>");
             } else {
+                $(".no-bids").html("");
                 $(".bid-create-date").html("");
                 $(".bid-price").html("");
                 // Reverse ordering the bids
@@ -104,6 +106,7 @@ function initialize() {
                   $(".zebra").append('<tr><td>' + prettyDate(data[i].created_at) + '</td><td> $' + data[i].price + '</td></tr>');
                 }
               }
+        });
         });
       });
     }
