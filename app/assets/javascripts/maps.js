@@ -220,6 +220,17 @@ function initialize() {
           $(".sold-price").html("NA");
         }
       });
+
+      $(".form").on("submit", function(e){
+        e.preventDefault();
+        var details = $(".form").serialize();
+        $.post("/bid", details, function(data) {
+          $(".notice").html(data.notice);
+        });
+
+      });
+
+
       })
    })
 
