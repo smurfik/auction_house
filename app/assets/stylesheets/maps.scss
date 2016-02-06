@@ -298,6 +298,10 @@
     @include span-columns(12);
     @include omega();
   }
+
+  #map-canvas {
+    height: calc(100vh - 550px);
+  }
 }
 //
 // @media (min-width: 768px) and (max-width: 1024px) { /* iPad portraits to landscape */
