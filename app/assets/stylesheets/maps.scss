@@ -292,3 +292,24 @@
   float: left;
   margin-bottom: 20px;
 }
+
+@media (max-width: 768px) { /* Everything below iPad portrait */
+  .sale, .facts, #map-canvas, .sidebar {
+    @include span-columns(12);
+    @include omega();
+  }
+}
+//
+// @media (min-width: 768px) and (max-width: 1024px) { /* iPad portraits to landscape */
+//   .sidebar .first-load {
+//     @include span-columns(6);
+//     @include omega(2n);
+//   }
+// }
+//
+// @media (min-width: 1024px) { /* Everything above iPad */
+//   .sidebar .first-load{
+//     @include span-columns(4);
+//     @include omega(3n);
+//   }
+// }
